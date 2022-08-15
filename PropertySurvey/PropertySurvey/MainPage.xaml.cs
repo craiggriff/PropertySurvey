@@ -382,7 +382,7 @@ namespace PropertySurvey
                 case "VEHICLE ACCIDENT": Navigation.PushAsync(new AccidentsVehicle(), false); break;
                 case "LADDER CHECKS": if (App.net.App_Settings.able_to_ladder_check == 1) { Navigation.PushAsync(new Ladders(), false); } else { DisplayAlert("", "Not authorized", "OK"); } break;
                 case "CONTRACT COMMENTS": if (App.net.App_Settings.able_to_send_comments == 1) { Navigation.PushAsync(new ContractComments(), false); } else { DisplayAlert("", "Not authorized", "OK"); } break;
-                case "STOCK ORDER": Device.OpenUri(new Uri("https://login.martindales.ltd.uk/stock_mobile.html")); break;
+                case "STOCK ORDER": Device.OpenUri(new Uri("http://192.168.137.15:7293/stock_mobile.html")); break;
                 case "TOOL CHECKS": Navigation.PushAsync(new ToolChecks(), false); break;
             }
         }

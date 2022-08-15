@@ -59,7 +59,7 @@ namespace PropertySurvey
 
         public string original_contract_number = "";
 
-        public string live_url = "https://login.martindales.ltd.uk";
+        public string live_url = "http://192.168.137.15:7293/";
         public bool receive_test_data = false;
 
         public bool bSavingPhoto = false;

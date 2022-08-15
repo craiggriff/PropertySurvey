@@ -34,7 +34,7 @@ namespace PropertySurvey
             new XElement("Username", username.Text),
             new XElement("SerialNumber", App.net.phone_serial)));
 
-            Uri thisuri = new Uri("https://login.martindales.ltd.uk" + "/WM7Communication/WM7ValidateMobilePhoneUser");
+            Uri thisuri = new Uri("http://192.168.137.15:7293/" + "/WM7Communication/WM7ValidateMobilePhoneUser");
             HttpHelper helper = new HttpHelper(thisuri, "POST",
             new KeyValuePair<string, string>("ContractFile", srcTree.ToString()));
             helper.ResponseComplete += new HttpResponseCompleteEventHandler(this.CommandComplete);

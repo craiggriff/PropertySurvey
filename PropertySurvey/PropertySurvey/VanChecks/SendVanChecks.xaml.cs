@@ -90,7 +90,7 @@ namespace PropertySurvey
 
         private void StartSending()
         {
-            Uri thisuri = new Uri("https://login.martindales.ltd.uk" + "/WM7Communication/SendVanCheck");
+            Uri thisuri = new Uri("http://192.168.137.15:7293/" + "/WM7Communication/SendVanCheck");
             HttpHelper helper = new HttpHelper(thisuri, "POST",
             new KeyValuePair<string, string>("ContractFile", "<ContractFile>" + FittingImage.ToString() + "</ContractFile>"));
             helper.ResponseComplete += new HttpResponseCompleteEventHandler(this.CommandComplete);
@@ -203,7 +203,7 @@ namespace PropertySurvey
                 localpostData.Append(localTree.ToString());
             }
 
-            Uri thisuri = new Uri("https://login.martindales.ltd.uk" + "/WM7Communication/SendVanCheckImage");
+            Uri thisuri = new Uri("http://192.168.137.15:7293/" + "/WM7Communication/SendVanCheckImage");
             HttpHelper helper = new HttpHelper(thisuri, "POST",
             new KeyValuePair<string, string>("ContractFile", "<ContractFile>" + localpostData.ToString() + "</ContractFile>"));
             helper.ResponseComplete += new HttpResponseCompleteEventHandler(this.CommandComplete);
