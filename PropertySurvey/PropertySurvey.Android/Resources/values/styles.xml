@@ -35,9 +35,9 @@
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
     <!-- colorPrimary is used for the default action bar background -->
     <!--<item name="colorPrimary">#004f00</item>-->
-    <item name="colorPrimary">#22811c</item>
+    <item name="colorPrimary">#aaaaaa</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#256b1e</item>
+    <item name="colorPrimaryDark">#999999</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     <item name="colorAccent">#F14511</item>
