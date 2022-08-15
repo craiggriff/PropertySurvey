@@ -69,7 +69,7 @@
                     <Label Text="Serial"/>
                     <Label x:Name="serial_number" Text="" HorizontalOptions="StartAndExpand"/>
                     <Grid HeightRequest="40"/>
-                    <StackLayout Orientation="Horizontal" Margin="3" >
+                    <StackLayout Orientation="Horizontal" Margin="3" IsVisible="false">
                         <Label Text="Upload data file" HorizontalOptions="StartAndExpand"/>
                         <Switch IsToggled="{Binding send_data_file}" HorizontalOptions="End" x:Name="senddata"/>
                     </StackLayout>
