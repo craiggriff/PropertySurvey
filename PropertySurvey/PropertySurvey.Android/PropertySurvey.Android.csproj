@@ -64,6 +64,9 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
+    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidSigningKeyStore>C:\Users\craig\AppData\Local\Xamarin\Mono for Android\Keystore\Property Survey Key\Property Survey Key.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>r2d23242</AndroidSigningStorePass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

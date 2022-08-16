@@ -91,10 +91,10 @@ namespace PropertySurvey
             SetButtons();
         }
 
-        private void OnUpdate(object sender, EventArgs e)
+        private void OnPrivacyPolicy(object sender, EventArgs e)
         {
             //Navigation.PushAsync(new Info(), false);
-            Device.OpenUri(new Uri("https://play.google.com/store/apps/details?id=com.MartindalesLtd.PropertySurvey"));
+            Device.OpenUri(new Uri("https://docs.google.com/document/d/1VG5xKZWyd_buiFfbvCUyHi4lmDfeZ9QhOvgmMPghYIg/edit"));
         }
 
         private void OnUpdateHistory(object sender, EventArgs e)

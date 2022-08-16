@@ -5,7 +5,7 @@
              Title="Settings">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="update_icon" Clicked="OnUpdate" Icon="update_icon.png"/>
+       
         <!--<ToolbarItem Clicked="OnUpdateHistory" Icon="update_history.png"/>-->
     </ContentPage.ToolbarItems>
 
@@ -38,7 +38,7 @@
                             <StackLayout Orientation="Vertical" Margin="3" VerticalOptions="EndAndExpand">
                                 <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
                                     <Label x:Name="_vers" Text=""  HorizontalOptions="End"/>
-                                    <Button x:Name="update_button" IsVisible="True" Text="Update" Clicked="OnUpdate" VerticalOptions="End" HorizontalOptions="End"/>
+                                   
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
@@ -69,9 +69,8 @@
                     <Label Text="Serial"/>
                     <Label x:Name="serial_number" Text="" HorizontalOptions="StartAndExpand"/>
                     <Grid HeightRequest="40"/>
-                    <StackLayout Orientation="Horizontal" Margin="3" IsVisible="false">
-                        <Label Text="Upload data file" HorizontalOptions="StartAndExpand"/>
-                        <Switch IsToggled="{Binding send_data_file}" HorizontalOptions="End" x:Name="senddata"/>
+                    <StackLayout Orientation="Horizontal" Margin="3" IsVisible="true">
+                        <Button Text="  Privacy Policy  " Clicked="OnPrivacyPolicy"/>
                     </StackLayout>
                     <Grid HeightRequest="40"/>
                 </StackLayout>
