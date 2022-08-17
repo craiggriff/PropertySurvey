@@ -1526,7 +1526,7 @@ namespace PropertySurvey
             {
                 App.net.App_Settings = new app_settings();
 
-                App.net.App_Settings.set_url = "http://192.168.137.15:7293/";
+                App.net.App_Settings.set_url = "http://192.168.137.15:7293";
                 App.net.App_Settings.set_name = "";
                 App.net.App_Settings.set_password = "";
                 App.net.App_Settings.set_ownercode = "";
@@ -1569,7 +1569,7 @@ namespace PropertySurvey
                 database.Insert(App.net.App_Settings);
             }
             if(App.net.App_Settings.set_url == "")
-                App.net.App_Settings.set_url = "http://192.168.137.15:7293/";
+                App.net.App_Settings.set_url = "http://192.168.137.15:7293";
             if (App.net.App_Settings.set_ownercode == "")
                 App.net.App_Settings.set_ownercode = "H1";
         }
