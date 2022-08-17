@@ -13,6 +13,9 @@ using System.IO;
 using System.Globalization;
 using Xamarin.Essentials;
 
+using System.Text.Json;
+using System.Net.Http;
+
 namespace PropertySurvey
 {
     public static class IntegerExtensions
@@ -41,31 +44,123 @@ namespace PropertySurvey
 
         int download_stage = 0;
 
+        HttpClient client;
+        JsonSerializerOptions serializerOptions;
+
+
         public ReceiveSurveys()
         {
             InitializeComponent();
 
-            
-            //trying to dos attack the server
-            //for (int i = 0; i < 500; i++)
-            //{
-                GetSurveys();
-            //}
+            client = new HttpClient();
+            serializerOptions = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                WriteIndented = true
+            };
+
+            Device.BeginInvokeOnMainThread(Start);
         }
 
-        protected override void OnAppearing()
+        private async void Start()
         {
-            base.OnAppearing();
-            DeviceDisplay.KeepScreenOn = true;
+            await GetSurveysJson();
         }
 
-        protected override void OnDisappearing()
+
+        public class GetSurveysDTO
         {
-            base.OnDisappearing();
-            DeviceDisplay.KeepScreenOn = false;
+            public string SurveyorCode { get; set; }
+
         }
 
-        public async void GetSurveys()
+        public class JobDTO
+        {
+            public int Id { get; set; }
+            public int ContractId { get; set; }
+            public string udi_cont { get; set; }
+            public string Date { get; set; }
+            public string Time { get; set; }
+            public string Name { get; set; }
+            public string Add1 { get; set; }
+            public string Add2 { get; set; }
+            public string Add3 { get; set; }
+            public string Postcode { get; set; }
+            public string Phone1 { get; set; }
+            public string Phone2 { get; set; }
+            public string Phone3 { get; set; }
+            public string DamageDesc { get; set; }
+            public string Instructions { get; set; }
+        }
+
+        public async Task GetSurveysJson()
+        {
+            Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/GetSurveyJobs", string.Empty));
+
+            try
+            {
+                GetSurveysDTO send_record = new GetSurveysDTO();
+                send_record.SurveyorCode = App.net.App_Settings.set_ownercode;
+
+
+                string json = JsonSerializer.Serialize<GetSurveysDTO>(send_record, serializerOptions);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = null;
+
+                response = await client.PostAsync(uri, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string receive_content = await response.Content.ReadAsStringAsync();
+                    List<JobDTO> receive_record = JsonSerializer.Deserialize<List<JobDTO>>(receive_content, serializerOptions);
+
+                    foreach (var j in receive_record)
+                    {
+                        App.net.HeaderRecord = App.data.GetHeaderByContract(j.udi_cont);
+
+                        if (App.net.HeaderRecord == null)
+                        {
+                            App.net.HeaderRecord = new Header();
+                            App.net.table_init.CreateHeader(); 
+                                                               
+                            App.net.HeaderRecord.udi_cont = j.udi_cont;
+                        }
+                        else
+                        {
+
+                        }
+
+                        App.net.HeaderRecord.iRecordType = 0;
+                        App.net.HeaderRecord.udi_date = j.Date;
+                        App.net.HeaderRecord.sn_name = "Insurer";
+                        App.net.HeaderRecord.uc_name = j.Name;
+                        App.net.HeaderRecord.uc_add1 = j.Add1;
+                        App.net.HeaderRecord.uc_add2 = j.Add2;
+                        App.net.HeaderRecord.uc_add3 = j.Add3;
+                        App.net.HeaderRecord.uc_postcode = j.Postcode;
+
+                        App.net.HeaderRecord.udi_jobtext = "";
+                        App.net.HeaderRecord.udi_fin = j.Time;
+                        App.net.HeaderRecord.uc_inceden = "03/11/2017";
+                        App.net.HeaderRecord.COD_String = "Unknown";
+                        App.net.HeaderRecord.udi_inst = j.Instructions;
+                        App.net.HeaderRecord.policy_number = "001";
+                        App.net.HeaderRecord.udi_start = j.Time;
+
+                        App.data.AddSurveyHeader(App.net.HeaderRecord);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Alert", ex.ToString(), "OK");
+            }
+
+        }
+
+
+        public void GetSurveysXML()
         {
             XDocument srcTree = new XDocument(
             new XComment("This is a comment"),
@@ -553,6 +648,23 @@ namespace PropertySurvey
                 }
             }
         }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            DeviceDisplay.KeepScreenOn = true;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            DeviceDisplay.KeepScreenOn = false;
+        }
+
     }
+
+
+
 }
 
