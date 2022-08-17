@@ -58,15 +58,14 @@ namespace PropertySurvey
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                 WriteIndented = true
             };
-
-            Device.BeginInvokeOnMainThread(Start);
+            GetSurveysJson();
+            //Device.BeginInvokeOnMainThread(Start);
         }
 
         private async void Start()
         {
             await GetSurveysJson();
         }
-
 
         public class GetSurveysDTO
         {
@@ -156,7 +155,7 @@ namespace PropertySurvey
             {
                 await DisplayAlert("Alert", ex.ToString(), "OK");
             }
-
+            Navigation.PopAsync();
         }
 
 

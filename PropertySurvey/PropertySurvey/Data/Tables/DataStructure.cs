@@ -684,7 +684,7 @@ namespace PropertySurvey
         public string bClosest { get; set; }
         public string Group { get; set; }                   // Group of closestness bull shit
         public string bProcessed { get; set; }          // Have we found its distance ?
-        public int id { get; set; }
+        public int ind { get; set; }
         public string inevitable_damage { get; set; }
         public bool fbstockusagecomplete { get; set; }  // is fitter stock usage complete
         public string uc_h_phone2 { get; set; } // Client Phone number					PHONE NUMBER

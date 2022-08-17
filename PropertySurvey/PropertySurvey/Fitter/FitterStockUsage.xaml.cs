@@ -57,10 +57,10 @@ namespace PropertySurvey
             if (App.CurrentApp.HeaderRecord.parts_used.Length == 0)
                 result = result + "Parts used\n";
 
-            if (App.CurrentApp.HeaderRecord.id == 0)
+            if (App.CurrentApp.HeaderRecord.ind == 0)
                 result = result + "Inevitable damage\n";
 
-            if (App.CurrentApp.HeaderRecord.id == 1 && App.CurrentApp.HeaderRecord.inevitable_damage.Length == 0)
+            if (App.CurrentApp.HeaderRecord.ind == 1 && App.CurrentApp.HeaderRecord.inevitable_damage.Length == 0)
                 result = result + "Explain Inevitable Damage\n";
 
             if (result.Length > 20)
@@ -143,7 +143,7 @@ namespace PropertySurvey
 
         private void SetInevitable()
         {
-            if (App.CurrentApp.HeaderRecord.id == 1)
+            if (App.CurrentApp.HeaderRecord.ind == 1)
             {
                 inevitableexplain.IsVisible = true;
                 inevitablewarning.IsVisible = true;

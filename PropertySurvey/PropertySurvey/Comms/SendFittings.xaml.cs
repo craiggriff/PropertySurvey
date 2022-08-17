@@ -429,7 +429,7 @@ namespace PropertySurvey
 
             FittingImage.Append("thedate=     " + String.Format("{0:dd/MM/yyyy}", item.fit_diary) + "\n");
 
-            AddYesNoInt(item.id, "InDam=       ");
+            AddYesNoInt(item.ind, "InDam=       ");
 
             FittingImage.Append("InDamEd=     " + item.inevitable_damage + "\n");
 
