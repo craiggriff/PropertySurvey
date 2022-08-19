@@ -1,0 +1,358 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace PropertySurveyService.Models
+{
+    public class CompositeTable
+    {
+        [Key]
+        public int Id { get; set; }
+        public int HeaderId { get; set; }
+        public string? udi_cont { get; set; }
+        public int item_number { get; set; }
+        public int isComplete { get; set; }
+        public string? cause_of_damage { get; set; }
+        public string? cause_of_damage_reason_different { get; set; }
+        public string? door_make { get; set; }
+        public int opens { get; set; }
+        public int is_lock { get; set; }
+        public string? frame_colour_inside { get; set; }
+        public string? frame_colour_outside { get; set; }
+        public string? door_colour_inside { get; set; }
+        public string? door_colour_outside { get; set; }
+        public string? door_design { get; set; }
+        public string? glass_design { get; set; }
+        public string? internal_width { get; set; }
+        public string? internal_height { get; set; }
+        public string? brick_width { get; set; }
+        public string? brick_height { get; set; }
+        public string? trickle_vents { get; set; }
+        public int addons { get; set; }
+        public string? addons_height { get; set; }
+        public string? addons_width { get; set; }
+        public string? handle_colour { get; set; }
+        public string? threshold_type { get; set; }
+        public int lever_pad_handles { get; set; }
+        public string? glass_pattern { get; set; }
+        public string? glass_type { get; set; }
+        public string? spacer_thickness { get; set; }
+        public string? spacer_colour { get; set; }
+        public int profile_type { get; set; }
+        public string? room_location { get; set; }
+        public string? special_glass { get; set; }
+        public string? comments { get; set; }
+        public int lead_CWidth { get; set; }
+        public int lead_CHeight { get; set; }
+        public int lead_anti_rattle { get; set; }
+        public string? lead_thickness { get; set; }
+        public string? lead_sod { get; set; }
+        public string? lead_type { get; set; }
+        public string? docl { get; set; }
+        public string? letteredit { get; set; }
+        public string? letter_box_pos { get; set; }
+        public string? pet_flap { get; set; }
+        public string? pet_type { get; set; }
+        public int pet_magnetic { get; set; }
+        public int glaze { get; set; }
+        public string? print_name { get; set; }
+        public bool lead_bDiamondComplete { get; set; }
+        public bool lead_bGeorgianComplete { get; set; }
+        public bool lead_bBarComplete { get; set; }
+        public int no_of_pics { get; set; }
+        public int no_of_photos { get; set; }
+        public int no_of_vids { get; set; }
+        public bool bDifferentFromOriginal { get; set; }
+        public string? lock_other_text { get; set; }
+        public int head_drip { get; set; }
+        public string? ChangeItemTo { get; set; }
+        public string? cills { get; set; }
+        public string? door_wood { get; set; }
+        public int hinged_on { get; set; }
+        public string? reason_not_repaired { get; set; }
+        public string? lead_comments { get; set; }
+        public string? parts_to_order { get; set; }
+        public int is_a_flat { get; set; }
+        public string? point_of_entry { get; set; }
+        public string? type_of_lockng_system_required { get; set; }
+        public int was_it_locked { get; set; }
+        public int fire_door { get; set; }
+        public float lead_CWidthf { get; set; }
+        public float lead_CHeightf { get; set; }
+        public string? lead_CWidths { get; set; }
+        public string? lead_CHeights { get; set; }
+        public bool glass_complete { get; set; }
+        public int replace_glass { get; set; }
+        public bool bRepair { get; set; }
+        public bool fensa { get; set; }
+        public string? WER_rating { get; set; }
+        public int gaskets { get; set; }
+        public string? gaskets_text { get; set; }
+        public int handles_req { get; set; }
+        public bool bHandleDrawingComplete { get; set; }
+        public string? handles_text { get; set; }
+
+
+        CompositeTable() { }
+        CompositeTable(CompositeTableDTO tItem) =>
+        (HeaderId,
+ udi_cont,
+ item_number,
+ isComplete,
+ cause_of_damage,
+ cause_of_damage_reason_different,
+ door_make,
+ opens,
+ is_lock,
+ frame_colour_inside,
+ frame_colour_outside,
+ door_colour_inside,
+ door_colour_outside,
+ door_design,
+ glass_design,
+ internal_width,
+ internal_height,
+ brick_width,
+ brick_height,
+ trickle_vents,
+ addons,
+ addons_height,
+ addons_width,
+ handle_colour,
+ threshold_type,
+ lever_pad_handles,
+ glass_pattern,
+ glass_type,
+ spacer_thickness,
+ spacer_colour,
+ profile_type,
+ room_location,
+ special_glass,
+ comments,
+ lead_CWidth,
+ lead_CHeight,
+ lead_anti_rattle,
+ lead_thickness,
+ lead_sod,
+ lead_type,
+ docl,
+ letteredit,
+ letter_box_pos,
+ pet_flap,
+ pet_type,
+ pet_magnetic,
+ glaze,
+ print_name,
+ lead_bDiamondComplete,
+ lead_bGeorgianComplete,
+ lead_bBarComplete,
+ no_of_pics,
+ no_of_photos,
+ no_of_vids,
+ bDifferentFromOriginal,
+ lock_other_text,
+ head_drip,
+ ChangeItemTo,
+ cills,
+ door_wood,
+ hinged_on,
+ reason_not_repaired,
+ lead_comments,
+ parts_to_order,
+ is_a_flat,
+ point_of_entry,
+ type_of_lockng_system_required,
+ was_it_locked,
+ fire_door,
+ lead_CWidthf,
+ lead_CHeightf,
+ lead_CWidths,
+ lead_CHeights,
+ glass_complete,
+ replace_glass,
+ bRepair,
+ fensa,
+ WER_rating,
+ gaskets,
+ gaskets_text,
+ handles_req,
+ bHandleDrawingComplete,
+ handles_text) = 
+        (tItem.RecID,
+tItem.udi_cont,
+tItem.item_number,
+tItem.isComplete,
+tItem.cause_of_damage,
+tItem.cause_of_damage_reason_different,
+tItem.door_make,
+tItem.opens,
+tItem.is_lock,
+tItem.frame_colour_inside,
+tItem.frame_colour_outside,
+tItem.door_colour_inside,
+tItem.door_colour_outside,
+tItem.door_design,
+tItem.glass_design,
+tItem.internal_width,
+tItem.internal_height,
+tItem.brick_width,
+tItem.brick_height,
+tItem.trickle_vents,
+tItem.addons,
+tItem.addons_height,
+tItem.addons_width,
+tItem.handle_colour,
+tItem.threshold_type,
+tItem.lever_pad_handles,
+tItem.glass_pattern,
+tItem.glass_type,
+tItem.spacer_thickness,
+tItem.spacer_colour,
+tItem.profile_type,
+tItem.room_location,
+tItem.special_glass,
+tItem.comments,
+tItem.lead_CWidth,
+tItem.lead_CHeight,
+tItem.lead_anti_rattle,
+tItem.lead_thickness,
+tItem.lead_sod,
+tItem.lead_type,
+tItem.docl,
+tItem.letteredit,
+tItem.letter_box_pos,
+tItem.pet_flap,
+tItem.pet_type,
+tItem.pet_magnetic,
+tItem.glaze,
+tItem.print_name,
+tItem.lead_bDiamondComplete,
+tItem.lead_bGeorgianComplete,
+tItem.lead_bBarComplete,
+tItem.no_of_pics,
+tItem.no_of_photos,
+tItem.no_of_vids,
+tItem.bDifferentFromOriginal,
+tItem.lock_other_text,
+tItem.head_drip,
+tItem.ChangeItemTo,
+tItem.cills,
+tItem.door_wood,
+tItem.hinged_on,
+tItem.reason_not_repaired,
+tItem.lead_comments,
+tItem.parts_to_order,
+tItem.is_a_flat,
+tItem.point_of_entry,
+tItem.type_of_lockng_system_required,
+tItem.was_it_locked,
+tItem.fire_door,
+tItem.lead_CWidthf,
+tItem.lead_CHeightf,
+tItem.lead_CWidths,
+tItem.lead_CHeights,
+tItem.glass_complete,
+tItem.replace_glass,
+tItem.bRepair,
+tItem.fensa,
+tItem.WER_rating,
+tItem.gaskets,
+tItem.gaskets_text,
+tItem.handles_req,
+tItem.bHandleDrawingComplete,
+tItem.handles_text);
+
+    }
+
+
+
+
+
+
+
+    public class CompositeTableDTO
+    {
+        public int RecID { get; set; }
+        public string? udi_cont { get; set; }
+        public int item_number { get; set; }
+        public int isComplete { get; set; }
+        public string? cause_of_damage { get; set; }
+        public string? cause_of_damage_reason_different { get; set; }
+        public string? door_make { get; set; }
+        public int opens { get; set; }
+        public int is_lock { get; set; }
+        public string? frame_colour_inside { get; set; }
+        public string? frame_colour_outside { get; set; }
+        public string? door_colour_inside { get; set; }
+        public string? door_colour_outside { get; set; }
+        public string? door_design { get; set; }
+        public string? glass_design { get; set; }
+        public string? internal_width { get; set; }
+        public string? internal_height { get; set; }
+        public string? brick_width { get; set; }
+        public string? brick_height { get; set; }
+        public string? trickle_vents { get; set; }
+        public int addons { get; set; }
+        public string? addons_height { get; set; }
+        public string? addons_width { get; set; }
+        public string? handle_colour { get; set; }
+        public string? threshold_type { get; set; }
+        public int lever_pad_handles { get; set; }
+        public string? glass_pattern { get; set; }
+        public string? glass_type { get; set; }
+        public string? spacer_thickness { get; set; }
+        public string? spacer_colour { get; set; }
+        public int profile_type { get; set; }
+        public string? room_location { get; set; }
+        public string? special_glass { get; set; }
+        public string? comments { get; set; }
+        public int lead_CWidth { get; set; }
+        public int lead_CHeight { get; set; }
+        public int lead_anti_rattle { get; set; }
+        public string? lead_thickness { get; set; }
+        public string? lead_sod { get; set; }
+        public string? lead_type { get; set; }
+        public string? docl { get; set; }
+        public string? letteredit { get; set; }
+        public string? letter_box_pos { get; set; }
+        public string? pet_flap { get; set; }
+        public string? pet_type { get; set; }
+        public int pet_magnetic { get; set; }
+        public int glaze { get; set; }
+        public string? print_name { get; set; }
+        public bool lead_bDiamondComplete { get; set; }
+        public bool lead_bGeorgianComplete { get; set; }
+        public bool lead_bBarComplete { get; set; }
+        public int no_of_pics { get; set; }
+        public int no_of_photos { get; set; }
+        public int no_of_vids { get; set; }
+        public bool bDifferentFromOriginal { get; set; }
+        public string? lock_other_text { get; set; }
+        public int head_drip { get; set; }
+        public string? ChangeItemTo { get; set; }
+        public string? cills { get; set; }
+        public string? door_wood { get; set; }
+        public int hinged_on { get; set; }
+        public string? reason_not_repaired { get; set; }
+        public string? lead_comments { get; set; }
+        public string? parts_to_order { get; set; }
+        public int is_a_flat { get; set; }
+        public string? point_of_entry { get; set; }
+        public string? type_of_lockng_system_required { get; set; }
+        public int was_it_locked { get; set; }
+        public int fire_door { get; set; }
+        public float lead_CWidthf { get; set; }
+        public float lead_CHeightf { get; set; }
+        public string? lead_CWidths { get; set; }
+        public string? lead_CHeights { get; set; }
+        public bool glass_complete { get; set; }
+        public int replace_glass { get; set; }
+        public bool bRepair { get; set; }
+        public bool fensa { get; set; }
+        public string? WER_rating { get; set; }
+        public int gaskets { get; set; }
+        public string? gaskets_text { get; set; }
+        public int handles_req { get; set; }
+        public bool bHandleDrawingComplete { get; set; }
+        public string? handles_text { get; set; }
+    }
+
+}
