@@ -101,7 +101,6 @@ namespace PropertySurvey
                 GetSurveysDTO send_record = new GetSurveysDTO();
                 send_record.SurveyorCode = App.net.App_Settings.set_ownercode;
 
-
                 string json = JsonSerializer.Serialize<GetSurveysDTO>(send_record, serializerOptions);
                 StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 

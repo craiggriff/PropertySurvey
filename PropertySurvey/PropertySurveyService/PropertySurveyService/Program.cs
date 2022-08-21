@@ -25,7 +25,6 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Get Surveys
 app.MapPost("/GetSurveyJobs", (GetSurveysDTO gs, PropertySurveyServiceContext db) =>
 {
     List<JobDTO> send_jobs = new List<JobDTO>();
@@ -41,6 +40,25 @@ app.MapPost("/GetSurveyJobs", (GetSurveysDTO gs, PropertySurveyServiceContext db
     }
 
     return Task.FromResult(Results.Ok(send_jobs));
+});
+
+app.MapPost("/SendSurveyJob", (HeaderDTO survey_header, PropertySurveyServiceContext db) =>
+{
+
+
+    OKRecordDTO return_record = new OKRecordDTO();
+    /*
+    foreach (var j in db.Job.Where(x => x.Surveyor.SurveyorCode == gs.SurveyorCode).ToList())
+    {
+        Customer? c = db.Customer.FirstOrDefault(x => x.CustomerId == j.CustomerId);
+
+        if (c == null)
+            c = new Customer();
+
+        send_jobs.Add(new JobDTO(j, c));
+    }
+    */
+    return Task.FromResult(Results.Ok(return_record));
 });
 
 app.UseAuthorization();

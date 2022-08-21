@@ -8,6 +8,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 
+using System.Text.Json;
+using System.Net.Http;
+
 namespace PropertySurvey
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -41,9 +44,19 @@ namespace PropertySurvey
 
         byte[] data;
 
+        HttpClient client;
+        JsonSerializerOptions serializerOptions;
+
         public SendSurveys()
         {
             InitializeComponent();
+
+            client = new HttpClient();
+            serializerOptions = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                WriteIndented = true
+            };
 
             headers = App.data.GetUnsentHeadersSurveys();
 
@@ -82,6 +95,97 @@ namespace PropertySurvey
             else
                 Device.BeginInvokeOnMainThread(CompleteDownload);
         }
+
+        
+        public async Task SendSurveysJson()
+        {
+            Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyJob", string.Empty));
+
+            ;
+
+            try
+            {
+                HeaderDTO send_record = new HeaderDTO();
+                send_record = (HeaderDTO)headers[current_survey];
+
+                string json = JsonSerializer.Serialize<HeaderDTO>(send_record, serializerOptions);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = null;
+
+                response = await client.PostAsync(uri, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string receive_content = await response.Content.ReadAsStringAsync();
+                    OKRecordDTO receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Alert", ex.ToString(), "OK");
+            }
+            Navigation.PopAsync();
+        }
+   
+        public void SendNextSurvey()
+        {
+            StringBuilder localpostData = new StringBuilder(128000);
+
+            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(SurveyImage.ToString());
+
+            Header item = headers[current_survey];
+
+            XDocument localTree = new XDocument(
+            new XElement("ContractFile",
+            new XElement("UserType", App.net.App_Settings.set_usertype),
+            new XElement("JobType", job_type),
+            new XElement("CreateEnd", "true"),
+            new XElement("UserCode", App.net.App_Settings.set_ownercode),
+            new XElement("UserType", App.net.App_Settings.set_usertype),
+            new XElement("ContractNumber", headers[current_survey].udi_cont),
+            new XElement("Job", System.Convert.ToBase64String(buffer))));
+
+
+            if (item.ss_no_of_photos > 0)
+            {
+                string str_sec_surv = new XDocument(new XElement("SecSurveyIn",
+                       new XElement("contract", item.udi_cont),
+                       new XElement("nowindows", item.ss_nowindows.ToString()),
+
+                       new XElement("nodoors", item.ss_nodoors.ToString()),
+                       new XElement("gencondition", item.ss_gencondition),
+                       new XElement("gencondition_other", item.ss_gencondition_other),
+                       new XElement("matwindows", item.ss_matwindows),
+                       new XElement("matwindows_other", item.ss_matwindows_other),
+                       new XElement("matdoors", item.ss_matdoors),
+                       new XElement("matdoors_other", item.ss_matdoors_other),
+                       new XElement("lockwindows", item.ss_lockwindows),
+                       new XElement("lockwindows_other", item.ss_lockwindows_other),
+                       new XElement("lockdoors", item.ss_lockdoors),
+                       new XElement("lockdoors_other", item.ss_lockdoors_other),
+                       new XElement("add_window_security", item.ss_add_window_security.ToString()),
+                       new XElement("location_windows_other", item.ss_location_windows_other),
+                       new XElement("secwindows_other", item.ss_secwindows_other),
+                       new XElement("add_door_security", item.ss_add_door_security.ToString()),
+                       new XElement("location_doors_other", item.ss_location_doors_other),
+                       new XElement("secdoors_other", item.ss_secdoors_other),
+                       new XElement("time_required", item.ss_time_required),
+                       new XElement("no_of_photos", item.ss_no_of_photos.ToString()))).ToString();
+
+                localTree.Element("ContractFile").Add(new XElement("SecSurvey", str_sec_surv));
+            }
+
+            localpostData.Append(localTree.ToString());
+
+            Uri thisuri = new Uri(App.net.App_Settings.set_url + "/WM7Communication/SendJobFile");
+            HttpHelper helper = new HttpHelper(thisuri, "POST",
+            new KeyValuePair<string, string>("ContractFile", localpostData.ToString()));
+            helper.ResponseComplete += new HttpResponseCompleteEventHandler(this.CommandComplete);
+            helper.Execute();
+        }
+
 
         protected override void OnAppearing()
         {
@@ -235,62 +339,7 @@ namespace PropertySurvey
                    new XElement("no_of_photos", item.ss_no_of_photos.ToString())));
         }
 
-        public void SendNextSurvey()
-        {
-            StringBuilder localpostData = new StringBuilder(128000);
 
-            byte[] buffer = System.Text.Encoding.UTF8.GetBytes(SurveyImage.ToString());
-
-            Header item = headers[current_survey];
-
-            XDocument localTree = new XDocument(
-            new XElement("ContractFile",
-            new XElement("UserType", App.net.App_Settings.set_usertype),
-            new XElement("JobType", job_type),
-            new XElement("CreateEnd", "true"),
-            new XElement("UserCode", App.net.App_Settings.set_ownercode),
-            new XElement("UserType", App.net.App_Settings.set_usertype),
-            new XElement("ContractNumber", headers[current_survey].udi_cont),
-            new XElement("Job", System.Convert.ToBase64String(buffer))));
-
-
-            if (item.ss_no_of_photos > 0)
-            {
-                string str_sec_surv = new XDocument(new XElement("SecSurveyIn",
-                       new XElement("contract", item.udi_cont),
-                       new XElement("nowindows", item.ss_nowindows.ToString()),
-
-                       new XElement("nodoors", item.ss_nodoors.ToString()),
-                       new XElement("gencondition", item.ss_gencondition),
-                       new XElement("gencondition_other", item.ss_gencondition_other),
-                       new XElement("matwindows", item.ss_matwindows),
-                       new XElement("matwindows_other", item.ss_matwindows_other),
-                       new XElement("matdoors", item.ss_matdoors),
-                       new XElement("matdoors_other", item.ss_matdoors_other),
-                       new XElement("lockwindows", item.ss_lockwindows),
-                       new XElement("lockwindows_other", item.ss_lockwindows_other),
-                       new XElement("lockdoors", item.ss_lockdoors),
-                       new XElement("lockdoors_other", item.ss_lockdoors_other),
-                       new XElement("add_window_security", item.ss_add_window_security.ToString()),
-                       new XElement("location_windows_other", item.ss_location_windows_other),
-                       new XElement("secwindows_other", item.ss_secwindows_other),
-                       new XElement("add_door_security", item.ss_add_door_security.ToString()),
-                       new XElement("location_doors_other", item.ss_location_doors_other),
-                       new XElement("secdoors_other", item.ss_secdoors_other),
-                       new XElement("time_required", item.ss_time_required),
-                       new XElement("no_of_photos", item.ss_no_of_photos.ToString()))).ToString();
-
-                localTree.Element("ContractFile").Add(new XElement("SecSurvey", str_sec_surv));
-            }
-
-            localpostData.Append(localTree.ToString());
-
-            Uri thisuri = new Uri(App.net.App_Settings.set_url + "/WM7Communication/SendJobFile");
-            HttpHelper helper = new HttpHelper(thisuri, "POST",
-            new KeyValuePair<string, string>("ContractFile", localpostData.ToString()));
-            helper.ResponseComplete += new HttpResponseCompleteEventHandler(this.CommandComplete);
-            helper.Execute();
-        }
 
         public void SendNextPicture()
         {

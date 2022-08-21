@@ -4,6 +4,11 @@ using System.Reflection;
 
 namespace PropertySurvey
 {
+    public class OKRecordDTO
+    {
+        string comments { get; set; }
+    }
+
     public class SurvImage
     {
         [PrimaryKey, AutoIncrement]
@@ -498,8 +503,13 @@ namespace PropertySurvey
         public string message_text { get; set; }
         public bool bRead { get; set; }
     }
+    public class HeaderDTO : Header
+    {
 
-    public class Header
+    }
+
+
+        public class Header
     {
 
         //[Indexed]
