@@ -17,6 +17,11 @@
 
   <ItemGroup>
     <Compile Remove="Accidents\WorkAccident.xaml.cs" />
+    <Compile Remove="Comms\SendPictures.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Comms\SendPictures.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1192,6 +1197,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="SkiaSharp" Version="2.88.1" />
     <PackageReference Include="SkiaSharp.Views" Version="2.88.1" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.1" />
@@ -1304,9 +1310,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\ReceiveShared.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Comms\SendPictures.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Controls\ViewButtonLabel.xaml">

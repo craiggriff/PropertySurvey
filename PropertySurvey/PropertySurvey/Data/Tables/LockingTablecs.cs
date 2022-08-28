@@ -61,5 +61,8 @@ namespace PropertySurvey
         public int l_itype6 { get; set; }
         public int l_itype7 { get; set; }
         public string long_comments { get; set; }
+
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

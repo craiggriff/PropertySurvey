@@ -137,5 +137,7 @@ namespace PropertySurvey
         public string lead_CHeights { get; set; }
         public bool glass_complete { get; set; }
         public int replace_glass { get; set; }
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

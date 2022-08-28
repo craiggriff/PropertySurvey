@@ -39,5 +39,7 @@ namespace PropertySurvey
         public string point_of_entry { get; set; }
         public string type_of_lockng_system_required { get; set; }
         public int was_it_locked { get; set; }
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

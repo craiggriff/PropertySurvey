@@ -84,5 +84,7 @@ namespace PropertySurvey
         public string lead_CWidths { get; set; }
         public string lead_CHeights { get; set; }
         public int parent_item { get; set; } // 0=none,1=alum,2=bifold,3=comp,4=cons,5=green,6=timber,7=upvc
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

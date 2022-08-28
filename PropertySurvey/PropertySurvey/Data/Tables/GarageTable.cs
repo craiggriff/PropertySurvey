@@ -68,5 +68,7 @@ namespace PropertySurvey
         public string type_of_lockng_system_required { get; set; }
         public int was_it_locked { get; set; }
         public string where_is_garage { get; set; }
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

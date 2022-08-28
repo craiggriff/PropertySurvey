@@ -1,17 +1,23 @@
 ﻿@model PropertySurveyService.Models.Header
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
 <h4>Header</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="RecID" class="control-label"></label>
+                <input asp-for="RecID" class="form-control" />
+                <span asp-validation-for="RecID" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="bDone" /> @Html.DisplayNameFor(model => model.bDone)
@@ -2133,7 +2139,7 @@
                 <span asp-validation-for="isTowerScaff" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

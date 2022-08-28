@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PropertySurveyService.Models.Job>
+﻿@model PropertySurveyService.ViewModels.JobHeaderIndexViewModel;
 
 @{
     ViewData["Title"] = "Jobs";
@@ -12,30 +12,22 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Time)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DamageDesc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Instructions)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Surveyor)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer)
-            </th>
+            <th>Contract Code</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Damage</th>
+            <th>Surveyor</th>
+            <th>Customer</th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Jobs) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractCode)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
@@ -46,15 +38,13 @@
                 @Html.DisplayFor(modelItem => item.DamageDesc)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Instructions)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Surveyor.SurveyorCode)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Customer.Name)
             </td>
             <td>
+                <a asp-action="Index" asp-route-id="@item.Id">Select</a> |
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
@@ -62,4 +52,28 @@
         </tr>
 }
     </tbody>
+    </table>
+
+    <table>
+
+    @if (Model.Headers != null)
+{
+    <tbody>
+        <h3>Headers Completed</h3>
+        <table class="table">
+            <tr>
+                <th>Report</th>
+
+            </tr>
+
+            @foreach (var item in Model.Headers)
+            {
+                <td>
+                    @item.rep_text
+                </td>
+            }
+        </table>
+    </tbody>
+
+}
 </table>

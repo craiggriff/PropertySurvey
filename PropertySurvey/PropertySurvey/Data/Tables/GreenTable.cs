@@ -37,5 +37,7 @@ namespace PropertySurvey
         public bool glass_complete { get; set; }
         public int replace_glass { get; set; }
         public int repair_or_replace { get; set; }
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

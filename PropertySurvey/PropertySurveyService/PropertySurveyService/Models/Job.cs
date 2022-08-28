@@ -8,6 +8,8 @@ namespace PropertySurveyService.Models
     {
         public int Id { get; set; }
         public int ContractId { get; set; }
+        [Display(Name = "Contract Code")]
+        public string? ContractCode { get; set; }
 
         [Display(Name = "Job Date")]
         [DataType(DataType.Date)]
@@ -48,6 +50,8 @@ namespace PropertySurveyService.Models
     {
         public int Id { get; set; }
         public int ContractId { get; set; }
+
+        public string? ContractCode { get; set; }
         public string? udi_cont { get; set; }
         public string? Date { get; set; }
         public string? Time { get; set; }
@@ -66,13 +70,13 @@ namespace PropertySurveyService.Models
         { 
             
 
-            (Id, ContractId, Date, Time, Name, Add1, Add2, Add3, Postcode, Phone1, Phone2, Phone3, DamageDesc, Instructions) =
+            (Id, ContractId, ContractCode, Date, Time, Name, Add1, Add2, Add3, Postcode, Phone1, Phone2, Phone3, DamageDesc, Instructions) =
 
-            (jobItem.Id, jobItem.ContractId, jobItem.Date.ToShortDateString(), jobItem.Time.ToString(), custItem.Name,
+            (jobItem.Id, jobItem.ContractId, jobItem.ContractCode, jobItem.Date.ToShortDateString(), jobItem.Time.ToString(), custItem.Name,
                 custItem.Add1, custItem.Add2, custItem.Add3, custItem.Postcode, custItem.Phone1,
                 custItem.Phone2, custItem.Phone3, jobItem.DamageDesc, jobItem.Instructions);
 
-            udi_cont = (jobItem.Id+1000).ToString("00000000");
+            udi_cont = ContractCode;
         }
     }
 

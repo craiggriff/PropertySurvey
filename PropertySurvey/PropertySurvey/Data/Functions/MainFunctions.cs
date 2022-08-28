@@ -941,6 +941,13 @@ namespace PropertySurvey
             else
                 database.Insert(App.net.PanelRecord);
         }
+        public void SavePanel(PanelTable p)
+        {
+            if (p.RecID != 0)
+                database.Update(p);
+            else
+                database.Insert(p);
+        }
         public int SavePanel(bool IsComplete)
         {
             if (IsComplete == true)
@@ -993,6 +1000,13 @@ namespace PropertySurvey
             else
                 database.Insert(App.net.UPVCRecord);
         }
+        public void SaveUPVC(UPVCTable u)
+        {
+            if (u.RecID != 0)
+                database.Update(u);
+            else
+                database.Insert(u);
+        }
         public int SaveUPVC(bool IsComplete)
         {
             if (IsComplete == true)
@@ -1037,6 +1051,13 @@ namespace PropertySurvey
                 database.Update(App.net.GarageRecord);
             else
                 database.Insert(App.net.GarageRecord);
+        }
+        public void SaveGarage(GarageTable g)
+        {
+            if (g.RecID != 0)
+                database.Update(g);
+            else
+                database.Insert(g);
         }
         public int SaveGarage(bool IsComplete)
         {
@@ -1089,6 +1110,13 @@ namespace PropertySurvey
                 database.Update(App.net.AlumRecord);
             else
                 database.Insert(App.net.AlumRecord);
+        }
+        public void SaveAlum(AlumTable a)
+        {
+            if (a.RecID != 0)
+                database.Update(a);
+            else
+                database.Insert(a);
         }
         public int SaveAlum(bool IsComplete)
         {
@@ -1145,6 +1173,13 @@ namespace PropertySurvey
                 database.Update(App.net.TimberRecord);
             else
                 database.Insert(App.net.TimberRecord);
+        }        
+        public void SaveTimber(TimberTable t)
+        {
+            if (t.RecID != 0)
+                database.Update(t);
+            else
+                database.Insert(t);
         }
         public int SaveTimber(bool IsComplete)
         {
@@ -1262,6 +1297,13 @@ namespace PropertySurvey
                 database.Update(App.net.GlassRecord);
             else
                 database.Insert(App.net.GlassRecord);
+        }        
+        public void SaveGlass(GlassTable g)
+        {
+            if (g.RecID != 0)
+                database.Update(g);
+            else
+                database.Insert(g);
         }
         public int SaveGlass(bool IsComplete)
         {
@@ -1306,6 +1348,13 @@ namespace PropertySurvey
             database.Insert(record);
 
             copy_glass_if_it_exists (udi_cont, item_no, record.item_number);
+        }
+        public void SaveBifold(BifoldTable b)
+        {
+            if (b.RecID != 0)
+                database.Update(b);
+            else
+                database.Insert(b);
         }
         public void SaveBifold()
         {
@@ -1364,6 +1413,13 @@ namespace PropertySurvey
             else
                 database.Insert(App.net.ConsRecord);
         }
+        public void SaveCons(ConsTable c)
+        {
+            if (c.RecID != 0)
+                database.Update(c);
+            else
+                database.Insert(c);
+        }
         public int SaveCons(bool IsComplete)
         {
             if (IsComplete == true)
@@ -1405,6 +1461,13 @@ namespace PropertySurvey
                 database.Update(App.net.LockingRecord);
             else
                 database.Insert(App.net.LockingRecord);
+        }        
+        public void SaveLocking(LockingTable l)
+        {
+            if (l.RecID != 0)
+                database.Update(l);
+            else
+                database.Insert(l);
         }
         public int SaveLocking(bool IsComplete)
         {
@@ -1456,6 +1519,13 @@ namespace PropertySurvey
             else
                 database.Insert(App.net.CompRecord);
         }
+        public void SaveComp(CompositeTable c)
+        {
+            if (c.RecID != 0)
+                database.Update(c);
+            else
+                database.Insert(c);
+        }
         public int SaveComp(bool IsComplete)
         {
             if (IsComplete == true)
@@ -1505,6 +1575,13 @@ namespace PropertySurvey
                 database.Update(App.net.GreenRecord);
             else
                 database.Insert(App.net.GreenRecord);
+        }        
+        public void SaveGreen(GreenTable g)
+        {
+            if (g.RecID != 0)
+                database.Update(g);
+            else
+                database.Insert(g);
         }
         public int SaveGreen(bool IsComplete)
         {

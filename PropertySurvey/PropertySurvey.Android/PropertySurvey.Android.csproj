@@ -78,6 +78,9 @@
     <Reference Include="Xamarin.Android.NUnitLite" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
     <PackageReference Include="SkiaSharp">
       <Version>2.80.1</Version>
     </PackageReference>

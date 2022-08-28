@@ -102,5 +102,6 @@ namespace PropertySurvey
         {
             database.Query<FAccidentsTable>("delete from FAccidentsTable where RecId = '" + AccidentRecID + "'");
         }
+
     }
 }

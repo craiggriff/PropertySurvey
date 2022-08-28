@@ -85,10 +85,10 @@ namespace PropertySurvey.Droid
         public const int STATE_PICTURE_TAKEN = 4;
 
         // Max preview width that is guaranteed by Camera2 API
-        private static readonly int MAX_PREVIEW_WIDTH = 1440;
+        private static readonly int MAX_PREVIEW_WIDTH = 11440;
 
         // Max preview height that is guaranteed by Camera2 API
-        private static readonly int MAX_PREVIEW_HEIGHT = 720;
+        private static readonly int MAX_PREVIEW_HEIGHT = 1720;
 
         // TextureView.ISurfaceTextureListener handles several lifecycle events on a TextureView
         private Camera2BasicSurfaceTextureListener mSurfaceTextureListener;

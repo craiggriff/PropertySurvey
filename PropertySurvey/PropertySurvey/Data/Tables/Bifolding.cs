@@ -55,6 +55,8 @@ namespace PropertySurvey
         public string handles_text { get; set; }
         public int addons { get; set; }                     // Added 25/9/19
         public string addon_width { get; set; }			    // enabled if addons==TRUE
-        public string addon_height { get; set; }	        // enabled if addons==TRUE
+        public string addon_height { get; set; }            // enabled if addons==TRUE
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

@@ -433,9 +433,9 @@ namespace PropertySurvey
 
         private void OnSendClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SendPictures());
+            //Navigation.PushAsync(new SendPictures());
 
-            /*
+            
             if (App.net.App_Settings.set_ownercode == "")
                 Navigation.PushAsync(new SettingsPage(), false);
             else
@@ -446,7 +446,7 @@ namespace PropertySurvey
                 if (App.net.App_Settings.set_usertype == "FIT")
                     Navigation.PushAsync(new SendFittings());
             }
-            */
+            
         }
 
         private void OnReceiveClicked(object sender, EventArgs e)

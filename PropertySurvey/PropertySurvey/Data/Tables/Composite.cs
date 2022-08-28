@@ -87,5 +87,7 @@ namespace PropertySurvey
         public int handles_req { get; set; }
         public bool bHandleDrawingComplete { get; set; }
         public string handles_text { get; set; }
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }

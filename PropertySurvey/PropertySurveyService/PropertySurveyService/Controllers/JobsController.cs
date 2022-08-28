@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -14,18 +16,47 @@ namespace PropertySurveyService.Controllers
     {
         private readonly PropertySurveyServiceContext _context;
 
+        public static string GetLocalIPAddress()
+        {
+            return "";
+        }
+
         public JobsController(PropertySurveyServiceContext context)
         {
+            DbInitializer.Initialize(context);
             _context = context;
         }
 
         // GET: Jobs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? Id)
         {
-            var propertySurveyServiceContext = _context.Job.Include(j => j.Customer).Include(j => j.Surveyor);
-            return View(await propertySurveyServiceContext.ToListAsync());
-        }
+            var viewModel = new JobHeaderIndexViewModel();
 
+            viewModel.Jobs = _context.Job.Include(j => j.Customer).Include(j => j.Surveyor);
+
+            if(Id!=null)
+            {
+                ViewData["JobID"] = Id.Value;
+
+                viewModel.Headers = _context.Header.Where(x => x.udi_cont == _context.Job.FirstOrDefault(j => j.Id == Id).ContractCode).ToList();
+            }
+
+            /*
+                        if (courseID != null)
+                        {
+                            ViewData["CourseID"] = courseID.Value;
+                            var selectedCourse = viewModel.Courses.Where(x => x.CourseID == courseID).Single();
+                            await _context.Entry(selectedCourse).Collection(x => x.Enrollments).LoadAsync();
+                            foreach (Enrollment enrollment in selectedCourse.Enrollments)
+                            {
+                                await _context.Entry(enrollment).Reference(x => x.Student).LoadAsync();
+                            }
+                            viewModel.Enrollments = selectedCourse.Enrollments;
+                        }
+            */
+
+            return View(viewModel);// await propertySurveyServiceContext.ToListAsync());
+        }
 
         private void PopulateCustomersDropDownList(object selectedCustomer = null)
         {
@@ -77,11 +108,16 @@ namespace PropertySurveyService.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ContractId,Date,Time,DamageDesc,Instructions,CustomerId,SurveyorId")] Job job)
+        public async Task<IActionResult> Create([Bind("Id,Date,Time,DamageDesc,Instructions,CustomerId,SurveyorId")] Job job)
         {
             if (ModelState.IsValid)
             {
+                job.ContractCode = (job.Id + 1000).ToString("00000000");
                 _context.Add(job);
+                await _context.SaveChangesAsync();
+                job.ContractCode = (job.Id + 1000).ToString("00000000");
+                _context.Update(job);
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -104,6 +140,7 @@ namespace PropertySurveyService.Controllers
             {
                 return NotFound();
             }
+            
             PopulateCustomersDropDownList(job.CustomerId);
             PopulateSurveyorsDropDownList(job.SurveyorId);
             return View(job);
@@ -114,7 +151,7 @@ namespace PropertySurveyService.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ContractId,Date,Time,DamageDesc,Instructions,CustomerId,SurveyorId")] Job job)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ContractCode,ContractId,Date,Time,DamageDesc,Instructions,CustomerId,SurveyorId")] Job job)
         {
             if (id != job.Id)
             {
@@ -125,6 +162,7 @@ namespace PropertySurveyService.Controllers
             {
                 try
                 {
+                    job.ContractCode = (job.Id + 1000).ToString("00000000");
                     _context.Update(job);
                     await _context.SaveChangesAsync();
                 }

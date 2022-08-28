@@ -10,6 +10,9 @@ using Xamarin.Essentials;
 
 using System.Text.Json;
 using System.Net.Http;
+using static PropertySurvey.SendSurveys;
+using System.Text.Json.Serialization;
+
 
 namespace PropertySurvey
 {
@@ -68,7 +71,7 @@ namespace PropertySurvey
             {
                 CreateImagesList();
                 total_items_to_send += images_to_send.Count();
-                if (total_images > 0)
+                if (false) // (total_images > 0)
                 {
                     try
                     {
@@ -96,17 +99,13 @@ namespace PropertySurvey
                 Device.BeginInvokeOnMainThread(CompleteDownload);
         }
 
-        
         public async Task SendSurveyJson()
         {
-            Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyJob", string.Empty));
+            Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyHeader", string.Empty));
 
             try
             {
-                HeaderDTO send_record = new HeaderDTO();
-                send_record = (HeaderDTO)headers[current_survey];
-
-                string json = JsonSerializer.Serialize<HeaderDTO>(send_record, serializerOptions);
+                string json = JsonSerializer.Serialize<Header>(headers[current_survey], serializerOptions);
                 StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = null;
@@ -118,15 +117,269 @@ namespace PropertySurvey
                     string receive_content = await response.Content.ReadAsStringAsync();
                     OKRecordDTO receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
                     headers[current_survey].bSent = true;
+                    headers[current_survey].Id = receive_record.DBId;
                     App.net.HeaderRecord = headers[current_survey];
+                    
                     App.data.SaveHeader();
+
+                    List<PanelTable> panels = App.data.GetPanelsByContract(headers[current_survey].udi_cont);
+
+                    foreach(var p in panels)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyPanel", string.Empty));
+
+                        json = JsonSerializer.Serialize<PanelTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SavePanel(p);
+                        }
+                    }
+
+                    List<AlumTable> alums = App.data.GetAlumsByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in alums)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyPanel", string.Empty));
+
+                        json = JsonSerializer.Serialize<AlumTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveAlum(p);
+                        }
+                    }
+
+                    List<BifoldTable> bifold = App.data.GetBifoldsByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in bifold)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyBifold", string.Empty));
+
+                        json = JsonSerializer.Serialize<BifoldTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveBifold(p);
+                        }
+                    }
+
+                    List<CompositeTable> comp = App.data.GetCompByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in comp)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyComp", string.Empty));
+
+                        json = JsonSerializer.Serialize<CompositeTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveComp(p);
+                        }
+                    }
+
+                    List<ConsTable> cons = App.data.GetConssByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in cons)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyCons", string.Empty));
+
+                        json = JsonSerializer.Serialize<ConsTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveCons(p);
+                        }
+                    }
+
+                    List<GarageTable> gar = App.data.GetGaragesByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in gar)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyGar", string.Empty));
+
+                        json = JsonSerializer.Serialize<GarageTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveGarage(p);
+                        }
+                    }
+
+                    List<GlassTable> glass = App.data.GetGlasssByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in glass)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyGlass", string.Empty));
+
+                        json = JsonSerializer.Serialize<GlassTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveGlass(p);
+                        }
+                    }
+
+                    List<GreenTable> green = App.data.GetGreensByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in green)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyGreen", string.Empty));
+
+                        json = JsonSerializer.Serialize<GreenTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveGreen(p);
+                        }
+                    }
+
+                    List<LockingTable> locking = App.data.GetLockByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in locking)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyLock", string.Empty));
+
+                        json = JsonSerializer.Serialize<LockingTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveLocking(p);
+                        }
+                    }
+                    List<TimberTable> timb = App.data.GetTimberByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in timb)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyTimber", string.Empty));
+
+                        json = JsonSerializer.Serialize<TimberTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveTimber(p);
+                        }
+                    }
+
+                    List<UPVCTable> upvc = App.data.GetUPVCsByContract(headers[current_survey].udi_cont);
+
+                    foreach (var p in upvc)
+                    {
+                        p.HeaderId = headers[current_survey].Id;
+
+                        uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyUPVC", string.Empty));
+
+                        json = JsonSerializer.Serialize<UPVCTable>(p, serializerOptions);
+                        content = new StringContent(json, Encoding.UTF8, "application/json");
+                        response = null;
+                        response = await client.PostAsync(uri, content);
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            receive_content = await response.Content.ReadAsStringAsync();
+                            receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                            p.Id = receive_record.DBId;
+                            App.data.SaveUPVC(p);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Alert", ex.ToString(), "OK");
             }
-            await Navigation.PopAsync();
+            //await Navigation.PopAsync();
         }
    
         public void SendNextSurvey()

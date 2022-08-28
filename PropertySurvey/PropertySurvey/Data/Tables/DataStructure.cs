@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Reflection;
 
@@ -6,7 +7,8 @@ namespace PropertySurvey
 {
     public class OKRecordDTO
     {
-        string comments { get; set; }
+        public string comments { get; set; }
+        public int DBId { get; set; }
     }
 
     public class SurvImage
@@ -503,11 +505,6 @@ namespace PropertySurvey
         public string message_text { get; set; }
         public bool bRead { get; set; }
     }
-    public class HeaderDTO : Header
-    {
-
-    }
-
 
         public class Header
     {
@@ -976,5 +973,7 @@ namespace PropertySurvey
         public int garage_door_motor { get; set; }        // Plaster required						    PLASTER REQUIRED
 
         public int isTowerScaff { get; set; }
+
+        public int Id { get; set; } // ID of record in database 
     }
 }

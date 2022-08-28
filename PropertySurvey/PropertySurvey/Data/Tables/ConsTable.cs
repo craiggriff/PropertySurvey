@@ -88,5 +88,7 @@ namespace PropertySurvey
         public bool fensa { get; set; }
         public string WER_rating { get; set; }
         public string overall_length_of_sheet { get; set; }
+        public int HeaderId { get; set; }
+        public int Id { get; set; }
     }
 }
