@@ -25,7 +25,7 @@
                 <controls:EntryLabel x:Name="reason_work_carrried_out" TextBinding="doc_l_compliant_reason" LabelText="Reason for work carried out"/>
 
                 <controls:AddMinusLabel Val="{Binding no_of_fitters}" Min="1" Max="8" OnSelectionChanged="OnFittersChanged" LabelText="No. of Fitters"/>
-
+                <!--OnSelectionChanged="OnFittersChanged"-->
                 <controls:EntryLabel x:Name="fname1" TextBinding="fname1" LabelText="Fitter Name 1"/>
                 <controls:EntryLabel x:Name="fname2" TextBinding="fname2" LabelText="Fitter Name 2"/>
                 <controls:EntryLabel x:Name="fname3" TextBinding="fname3" LabelText="Fitter Name 3"/>

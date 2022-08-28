@@ -69,7 +69,7 @@
             <controls:EditPickerLabel x:Name="threshold_picker" LabelText="Threshold" TextBinding="threshold_type" OnTextChangedEvent="threshold_changed"/>
             <Image x:Name="cill_image" IsVisible="False" Margin="3"/>
             <controls:EditPickerLabel x:Name="cill_picker" LabelText="Cill" TextBinding="cill_type"/>
-            <controls:AddMinusLabel Val="{Binding number_of_doors}" Min="1" Max="7" LabelText="Number of doors"/>
+            <controls:AddMinusLabel Val="{Binding number_of_doors}" Min="1" Max="7" OnSelectionChanged="OnNumChanged" LabelText="Number of doors"/>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Label Text="Type of doors" HorizontalOptions="FillAndExpand"/>

@@ -293,5 +293,10 @@ namespace PropertySurvey
         {
             return false; //  App.CurrentApp.BifoldRecord.bDifferentFromOriginal;
         }
+
+        private void OnNumChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

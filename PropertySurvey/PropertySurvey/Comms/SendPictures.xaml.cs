@@ -55,8 +55,6 @@ namespace PropertySurvey
             Device.BeginInvokeOnMainThread(CompleteDownload);
         }
 
-
-
         public void SendNextPicture()
         {
             byte[] send_data = new byte[200000];

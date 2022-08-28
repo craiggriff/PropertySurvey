@@ -31,7 +31,7 @@ namespace PropertySurvey
         protected override bool OnBackButtonPressed()
         {
             base.OnBackButtonPressed();
-            if (save_button.IsEnabled == true)
+            if (true)//(save_button.IsEnabled == true)
             {
                 Save();
             }

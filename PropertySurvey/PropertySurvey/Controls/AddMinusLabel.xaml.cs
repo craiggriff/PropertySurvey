@@ -82,5 +82,10 @@ namespace MartControls
         {
             SetValueText();
         }
+
+        private void OnChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

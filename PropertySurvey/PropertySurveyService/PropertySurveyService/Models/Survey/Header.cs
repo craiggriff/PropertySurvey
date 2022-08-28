@@ -5,6 +5,8 @@ namespace PropertySurveyService.Models
 {
     public class Header
     {
+        private Header header;
+
         [Key]
         public int Id { get; set; }
         public bool bDone { get; set; }
@@ -440,8 +442,8 @@ namespace PropertySurveyService.Models
 
         public int isTowerScaff { get; set; }
 
-        Header() { }
-        Header(HeaderDTO tItem)
+        public Header() { }
+        public Header(HeaderDTO tItem)
         {
             (
      bDone,
@@ -1295,6 +1297,11 @@ namespace PropertySurveyService.Models
     tItem.isTowerScaff);
 
             Id = int.Parse(tItem.udi_cont) - 1000;
+        }
+
+        public Header(Header header)
+        {
+            this.header = header;
         }
     }
 

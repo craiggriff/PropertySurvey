@@ -84,7 +84,7 @@ namespace PropertySurvey
                 {
                     if (total_surveys > 0)
                     {
-                        SendNextSurvey();
+                        SendSurveyJson();
                     }
                     else
                     {
@@ -97,11 +97,9 @@ namespace PropertySurvey
         }
 
         
-        public async Task SendSurveysJson()
+        public async Task SendSurveyJson()
         {
             Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyJob", string.Empty));
-
-            ;
 
             try
             {
@@ -119,14 +117,16 @@ namespace PropertySurvey
                 {
                     string receive_content = await response.Content.ReadAsStringAsync();
                     OKRecordDTO receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
-
+                    headers[current_survey].bSent = true;
+                    App.net.HeaderRecord = headers[current_survey];
+                    App.data.SaveHeader();
                 }
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Alert", ex.ToString(), "OK");
             }
-            Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
    
         public void SendNextSurvey()

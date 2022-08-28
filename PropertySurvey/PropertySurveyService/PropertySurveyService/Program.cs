@@ -44,9 +44,14 @@ app.MapPost("/GetSurveyJobs", (GetSurveysDTO gs, PropertySurveyServiceContext db
 
 app.MapPost("/SendSurveyJob", (HeaderDTO survey_header, PropertySurveyServiceContext db) =>
 {
-
-
     OKRecordDTO return_record = new OKRecordDTO();
+
+    Header new_header = new Header(new Header(survey_header));
+
+
+
+    db.Add(new_header);
+
     /*
     foreach (var j in db.Job.Where(x => x.Surveyor.SurveyorCode == gs.SurveyorCode).ToList())
     {
