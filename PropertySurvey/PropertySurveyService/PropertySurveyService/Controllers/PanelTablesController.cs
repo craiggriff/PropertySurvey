@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,30 @@ namespace PropertySurveyService.Controllers
         // GET: PanelTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new PanelIndexViewModel();
+
+
             if (id == null || _context.PanelTable == null)
             {
                 return NotFound();
             }
 
-            var panelTable = await _context.PanelTable
+            viewModel.Panel = await _context.PanelTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (panelTable == null)
+            if (viewModel.Panel == null)
             {
                 return NotFound();
             }
 
-            return View(panelTable);
+
+            List<PhotoImage> photoimages = new List<PhotoImage>();
+
+            photoimages = _context.Images.Where(x => x.Filename!= null).ToList();
+
+            viewModel.Images = null;// photoimages;
+
+
+            return View(viewModel);
         }
 
         // GET: PanelTables/Create

@@ -1,7 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿
 using SQLite;
 using System;
-using System.Reflection;
 
 namespace PropertySurvey
 {
@@ -9,6 +8,13 @@ namespace PropertySurvey
     {
         public string comments { get; set; }
         public int DBId { get; set; }
+    }
+
+    public class ImageDTO
+    {
+        public string Filename { get; set; }
+        public string Data { get; set; }
+
     }
 
     public class SurvImage

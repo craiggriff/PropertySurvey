@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PropertySurveyService.Data;
 
@@ -11,9 +12,10 @@ using PropertySurveyService.Data;
 namespace PropertySurveyService.Migrations
 {
     [DbContext(typeof(PropertySurveyServiceContext))]
-    partial class PropertySurveyServiceContextModelSnapshot : ModelSnapshot
+    [Migration("20220830124009_Initial-Create-M")]
+    partial class InitialCreateM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3025,6 +3027,36 @@ namespace PropertySurveyService.Migrations
                     b.ToTable("Header");
                 });
 
+            modelBuilder.Entity("PropertySurveyService.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ContractCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Data")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Filename")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("HeaderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Filename");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("PropertySurveyService.Models.Job", b =>
                 {
                     b.Property<int>("Id")
@@ -3363,36 +3395,6 @@ namespace PropertySurveyService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PanelTable");
-                });
-
-            modelBuilder.Entity("PropertySurveyService.Models.PhotoImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("ContractCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Data")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Filename")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("HeaderId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Filename");
-
-                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("PropertySurveyService.Models.Surveyor", b =>

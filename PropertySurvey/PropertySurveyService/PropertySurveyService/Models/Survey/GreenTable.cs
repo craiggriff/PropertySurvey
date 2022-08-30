@@ -40,6 +40,7 @@ namespace PropertySurveyService.Models
         public int replace_glass { get; set; }
         public int repair_or_replace { get; set; }
 
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.green); }
     }
 
 

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PropertySurveyService.Migrations
 {
-    public partial class Initi : Migration
+    public partial class InitialCreateM : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -1080,6 +1080,23 @@ namespace PropertySurveyService.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Filename = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Data = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ContractCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    HeaderId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "LockingTable",
                 columns: table => new
                 {
@@ -1539,6 +1556,11 @@ namespace PropertySurveyService.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Images_Filename",
+                table: "Images",
+                column: "Filename");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Job_CustomerId",
                 table: "Job",
                 column: "CustomerId");
@@ -1574,6 +1596,9 @@ namespace PropertySurveyService.Migrations
 
             migrationBuilder.DropTable(
                 name: "Header");
+
+            migrationBuilder.DropTable(
+                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "Job");

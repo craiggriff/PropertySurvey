@@ -41,5 +41,7 @@ namespace PropertySurveyService.Models
         public string? point_of_entry { get; set; }
         public string? type_of_lockng_system_required { get; set; }
         public int was_it_locked { get; set; }
+
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.panel); }
     }
 }

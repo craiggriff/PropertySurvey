@@ -90,7 +90,7 @@ namespace PropertySurveyService.Models
         public bool bHandleDrawingComplete { get; set; }
         public string? handles_text { get; set; }
 
-
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.comp); }
     }
 
 }

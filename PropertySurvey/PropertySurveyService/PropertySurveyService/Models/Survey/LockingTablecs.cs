@@ -62,6 +62,8 @@ namespace PropertySurveyService.Models
         public int l_itype6 { get; set; }
         public int l_itype7 { get; set; }
         public string? long_comments { get; set; }
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.lockin); }
+
 
     }
 }

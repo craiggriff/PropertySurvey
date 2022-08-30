@@ -143,6 +143,8 @@ namespace PropertySurveyService.Models
         public bool glass_complete { get; set; }
         public int replace_glass { get; set; }
 
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.alum); }
+
     }
 
 

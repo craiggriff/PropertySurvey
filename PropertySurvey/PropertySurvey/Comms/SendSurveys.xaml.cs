@@ -71,34 +71,70 @@ namespace PropertySurvey
             {
                 CreateImagesList();
                 total_items_to_send += images_to_send.Count();
-                if (false) // (total_images > 0)
-                {
-                    try
-                    {
-                        SendNextPicture();
-                    }
-                    catch (Exception)
-                    {
-                        DisplayAlert("error sending", images_to_send[current_image], "OK");
-                    }
 
-                }
-                else
+                try
                 {
-                    if (total_surveys > 0)
-                    {
-                        SendSurveyJson();
-                    }
-                    else
-                    {
-                        Device.BeginInvokeOnMainThread(CompleteDownload);
-                    }
+
+                    SendImagesJson();
+                }
+                catch (Exception e)
+                {
+                    DisplayAlert("error sending", e.ToString(), "OK");
+                }                
+                
+                try
+                {
+                    
+                    //SendSurveyJson();
+                }
+                catch (Exception e)
+                {
+                    DisplayAlert("error sending", e.ToString(), "OK");
                 }
             }
-            else
-                Device.BeginInvokeOnMainThread(CompleteDownload);
+             
+       
         }
 
+        public async Task SendImagesJson()
+        {
+
+            foreach (var p in images_to_send)
+            {
+                Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyImage", string.Empty));
+
+                ImageDTO image_dto = new ImageDTO();
+
+                string just_file_name = p.Replace("Photos/", "");
+                just_file_name = just_file_name.Replace("Drawings/", "");
+                just_file_name = just_file_name.Replace("Signatures/", "");
+                just_file_name = just_file_name.Replace("Videos/", "");
+
+                if (App.files.FileExists(p))
+                {
+                    data = App.files.LoadBinary(p);
+                }
+                image_dto.Filename = just_file_name;
+                image_dto.Data = System.Convert.ToBase64String(data);
+
+                string json = JsonSerializer.Serialize<ImageDTO>(image_dto, serializerOptions);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = null;
+                response = await client.PostAsync(uri, content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string receive_content = await response.Content.ReadAsStringAsync();
+                    OKRecordDTO receive_record = JsonSerializer.Deserialize<OKRecordDTO>(receive_content, serializerOptions);
+
+                    //p.Id = receive_record.DBId;
+                    //App.data.SavePanel(p);
+                }
+            }
+
+            MessageImages.Text = "Images Sent";
+
+        }
         public async Task SendSurveyJson()
         {
             Uri uri = new Uri(string.Format(App.net.App_Settings.set_url + "/SendSurveyHeader", string.Empty));
@@ -123,8 +159,8 @@ namespace PropertySurvey
                     App.data.SaveHeader();
 
                     List<PanelTable> panels = App.data.GetPanelsByContract(headers[current_survey].udi_cont);
-
-                    foreach(var p in panels)
+                    MessageLabel.Text = "Panel";
+                    foreach (var p in panels)
                     {
                         p.HeaderId = headers[current_survey].Id;
 
@@ -373,6 +409,9 @@ namespace PropertySurvey
                             App.data.SaveUPVC(p);
                         }
                     }
+
+                    
+
                 }
             }
             catch (Exception ex)
@@ -380,8 +419,23 @@ namespace PropertySurvey
                 await DisplayAlert("Alert", ex.ToString(), "OK");
             }
             //await Navigation.PopAsync();
+            //Device.BeginInvokeOnMainThread(CompleteDownload2);
+            act_ind.IsRunning = false;
+            MessageLabel.Text = "Complete";
+            CompleteButton.IsVisible = true;
         }
-   
+
+
+        private void CompleteDownload2()
+        {
+
+        }
+
+
+        private void OnCompleteClicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
         public void SendNextSurvey()
         {
             StringBuilder localpostData = new StringBuilder(128000);
@@ -2278,5 +2332,7 @@ namespace PropertySurvey
                 }
             }
         }
+
+
     }
 }

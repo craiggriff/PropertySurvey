@@ -71,6 +71,8 @@ namespace PropertySurveyService.Models
         public int was_it_locked { get; set; }
         public string? where_is_garage { get; set; }
 
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.garage); }
+
     }
 
 }

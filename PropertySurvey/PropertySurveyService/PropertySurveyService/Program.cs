@@ -222,6 +222,25 @@ app.MapPost("/SendSurveyUPVC", (UPVCTable survey_upvc, PropertySurveyServiceCont
     return Task.FromResult(Results.Ok(return_record));
 });
 
+app.MapPost("/SendSurveyImage", (ImageDTO imageDTO, PropertySurveyServiceContext db) =>
+{
+    OKRecordDTO return_record = new OKRecordDTO();
+
+    PhotoImage image = new PhotoImage();
+
+    image.Filename = imageDTO.Filename;
+    image.Data = imageDTO.Data;
+    image.DateTime = DateTime.Now;
+
+    if (db.Images.Where(x => x.Filename == image.Filename).Count()==0)
+        db.Add(image);
+
+    db.SaveChanges();
+    return_record.comments = "Success";
+
+    return Task.FromResult(Results.Ok(return_record));
+});
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

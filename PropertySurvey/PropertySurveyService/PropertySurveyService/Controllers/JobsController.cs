@@ -28,9 +28,9 @@ namespace PropertySurveyService.Controllers
         }
 
         // GET: Jobs
-        public async Task<IActionResult> Index(int? Id)
+        public async Task<IActionResult> Index(int? Id, int? headerId)
         {
-            var viewModel = new JobHeaderIndexViewModel();
+            var viewModel = new JobIndexViewModel();
 
             viewModel.Jobs = _context.Job.Include(j => j.Customer).Include(j => j.Surveyor);
 
@@ -42,20 +42,31 @@ namespace PropertySurveyService.Controllers
             }
 
             /*
-                        if (courseID != null)
-                        {
-                            ViewData["CourseID"] = courseID.Value;
-                            var selectedCourse = viewModel.Courses.Where(x => x.CourseID == courseID).Single();
-                            await _context.Entry(selectedCourse).Collection(x => x.Enrollments).LoadAsync();
-                            foreach (Enrollment enrollment in selectedCourse.Enrollments)
-                            {
-                                await _context.Entry(enrollment).Reference(x => x.Student).LoadAsync();
-                            }
-                            viewModel.Enrollments = selectedCourse.Enrollments;
-                        }
-            */
+            if(headerId!=null)
+            {
+                ViewData["HeaderID"] = headerId.Value;
 
-            return View(viewModel);// await propertySurveyServiceContext.ToListAsync());
+                foreach (var n in Enum.GetValues(typeof(enum_item_type)))
+                {
+                    switch (n)
+                    {
+                        //case enum_item_type.upvc:
+                        //    viewModel.SurveyItems += _context.Header.Where(x => x.udi_cont == _context.Header.FirstOrDefault(j => j.Id == headerId.Value).udi_cont).ToEnumeral();
+                        case enum_item_type.panel: foreach (var p in _context.PanelTable.Where(x => x.HeaderId == headerId.Value))
+                                                        viewModel.SurveyItems.Append(p.AsSurveyItem());
+                                                        break;     
+                            //case enum_item_type.glass: return "Glass";
+                            //case enum_item_type.alum: return "Aluminium";
+                            //case enum_item_type.garage: return "Garage";
+                            //case enum_item_type.timber: return "Timber";
+                            //case enum_item_type.bifold: return "Bifold";
+                            //case enum_item_type.lockin: return "Lock-mech";
+                            //case enum_item_type.green: return "Greenhouse";
+                    }
+                }
+            }
+            */
+            return View(viewModel);
         }
 
         private void PopulateCustomersDropDownList(object selectedCustomer = null)

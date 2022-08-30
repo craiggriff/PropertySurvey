@@ -29,5 +29,7 @@ namespace PropertySurveyService.Data
         public DbSet<PropertySurveyService.Models.PanelTable> PanelTable { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.TimberTable> TimberTable { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.UPVCTable> UPVCTable { get; set; } = default!;
+
+        public DbSet<PropertySurveyService.Models.PhotoImage> Images { get; set; } = default!;
     }
 }

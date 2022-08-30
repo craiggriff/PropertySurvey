@@ -154,7 +154,7 @@ namespace PropertySurvey
             {
                 await DisplayAlert("Alert", ex.ToString(), "OK");
             }
-            Navigation.PopAsync();
+            //Navigation.PopAsync();
         }
 
 

@@ -59,5 +59,7 @@ namespace PropertySurveyService.Models
         public string? addon_width { get; set; }
         public string? addon_height { get; set; }
 
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.bifold); }
+
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,57 @@ namespace PropertySurveyService.Controllers
         // GET: Headers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new HeaderIndexViewModel();
+
             if (id == null || _context.Header == null)
             {
                 return NotFound();
             }
 
-            var header = await _context.Header
+            viewModel.Header = await _context.Header
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (header == null)
+            if (viewModel.Header == null)
             {
                 return NotFound();
             }
+            else
+            {
+                List<SurveyItem> items = new List<SurveyItem>();
+                //viewModel.SurveyItems = new INumerable<SurveyItem>();
+                foreach (var n in Enum.GetValues(typeof(enum_item_type)))
+                {
+                    switch (n)
+                    {
+                        case enum_item_type.upvc:
+                            foreach (var p in _context.UPVCTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.panel:
+                            foreach (var p in _context.PanelTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.glass:
+                            foreach (var p in _context.GlassTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.alum:
+                            foreach (var p in _context.AlumTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.garage:
+                            foreach (var p in _context.GarageTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.timber:
+                            foreach (var p in _context.TimberTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.bifold:
+                            foreach (var p in _context.BifoldTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.lockin:
+                            foreach (var p in _context.LockingTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                        case enum_item_type.green:
+                            foreach (var p in _context.GreenTable.Where(x => x.HeaderId == viewModel.Header.Id)) items.Add(p.AsSurveyItem()); break;
+                    }
+                }
+                viewModel.SurveyItems = items;
 
-            return View(header);
+                List<PhotoImage> photoimages = new List<PhotoImage>();
+
+                photoimages = _context.Images.ToList();
+
+                viewModel.Images = photoimages;
+            }
+
+            return View(viewModel);
         }
 
         // GET: Headers/Create

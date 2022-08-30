@@ -91,7 +91,7 @@ namespace PropertySurveyService.Models
         public string? WER_rating { get; set; }
         public string? overall_length_of_sheet { get; set; }
 
-
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.cons); }
     }
 
 }

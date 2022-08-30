@@ -87,6 +87,7 @@ namespace PropertySurveyService.Models
         public string? lead_CHeights { get; set; }
         public int parent_item { get; set; }
 
+        public SurveyItem AsSurveyItem() { return new SurveyItem(Id, enum_item_type.glass); }
     }
 
 }

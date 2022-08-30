@@ -12,8 +12,8 @@ using PropertySurveyService.Data;
 namespace PropertySurveyService.Migrations
 {
     [DbContext(typeof(PropertySurveyServiceContext))]
-    [Migration("20220828132418_Initi")]
-    partial class Initi
+    [Migration("20220830134428_Photo-Images")]
+    partial class PhotoImages
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -3365,6 +3365,36 @@ namespace PropertySurveyService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PanelTable");
+                });
+
+            modelBuilder.Entity("PropertySurveyService.Models.PhotoImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ContractCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Data")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Filename")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("HeaderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Filename");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("PropertySurveyService.Models.Surveyor", b =>
