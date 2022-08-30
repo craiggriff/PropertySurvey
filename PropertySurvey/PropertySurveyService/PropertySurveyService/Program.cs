@@ -231,6 +231,7 @@ app.MapPost("/SendSurveyImage", (ImageDTO imageDTO, PropertySurveyServiceContext
     image.Filename = imageDTO.Filename;
     image.Data = imageDTO.Data;
     image.DateTime = DateTime.Now;
+    image.ContractCode = imageDTO.Filename.Substring(0, 8);
 
     if (db.Images.Where(x => x.Filename == image.Filename).Count()==0)
         db.Add(image);

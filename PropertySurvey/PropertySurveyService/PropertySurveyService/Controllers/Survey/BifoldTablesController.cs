@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: BifoldTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.BifoldTable == null)
             {
                 return NotFound();
             }
 
-            var bifoldTable = await _context.BifoldTable
+            viewModel.Bifold = await _context.BifoldTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (bifoldTable == null)
+            if (viewModel.Bifold == null)
             {
                 return NotFound();
             }
 
-            return View(bifoldTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Bifold.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Bifold.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: BifoldTables/Create

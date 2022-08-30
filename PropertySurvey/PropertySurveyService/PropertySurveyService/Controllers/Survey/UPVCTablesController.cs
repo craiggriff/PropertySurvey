@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: UPVCTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.UPVCTable == null)
             {
                 return NotFound();
             }
 
-            var uPVCTable = await _context.UPVCTable
+            viewModel.UPVC = await _context.UPVCTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (uPVCTable == null)
+            if (viewModel.UPVC == null)
             {
                 return NotFound();
             }
 
-            return View(uPVCTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.UPVC.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.UPVC.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: UPVCTables/Create

@@ -1,4 +1,4 @@
-﻿@model PropertySurveyService.Models.ConsTable
+﻿@model PropertySurveyService.ViewModels.ItemIndexViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,516 +7,550 @@
 <h1>Details</h1>
 
 <div>
+
+                <table class="table">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+
     <h4>ConsTable</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HeaderId)
+            @Html.DisplayNameFor(model => model.Cons.HeaderId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HeaderId)
+            @Html.DisplayFor(model => model.Cons.HeaderId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.udi_cont)
+            @Html.DisplayNameFor(model => model.Cons.udi_cont)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.udi_cont)
+            @Html.DisplayFor(model => model.Cons.udi_cont)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.item_number)
+            @Html.DisplayNameFor(model => model.Cons.item_number)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.item_number)
+            @Html.DisplayFor(model => model.Cons.item_number)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isComplete)
+            @Html.DisplayNameFor(model => model.Cons.isComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isComplete)
+            @Html.DisplayFor(model => model.Cons.isComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.type)
+            @Html.DisplayNameFor(model => model.Cons.type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.type)
+            @Html.DisplayFor(model => model.Cons.type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cause_of_damage)
+            @Html.DisplayNameFor(model => model.Cons.cause_of_damage)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cause_of_damage)
+            @Html.DisplayFor(model => model.Cons.cause_of_damage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cause_of_damage_reason_different)
+            @Html.DisplayNameFor(model => model.Cons.cause_of_damage_reason_different)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cause_of_damage_reason_different)
+            @Html.DisplayFor(model => model.Cons.cause_of_damage_reason_different)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.material_type)
+            @Html.DisplayNameFor(model => model.Cons.material_type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.material_type)
+            @Html.DisplayFor(model => model.Cons.material_type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeA)
+            @Html.DisplayNameFor(model => model.Cons.sizeA)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeA)
+            @Html.DisplayFor(model => model.Cons.sizeA)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeB)
+            @Html.DisplayNameFor(model => model.Cons.sizeB)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeB)
+            @Html.DisplayFor(model => model.Cons.sizeB)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeC)
+            @Html.DisplayNameFor(model => model.Cons.sizeC)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeC)
+            @Html.DisplayFor(model => model.Cons.sizeC)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeD)
+            @Html.DisplayNameFor(model => model.Cons.sizeD)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeD)
+            @Html.DisplayFor(model => model.Cons.sizeD)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeE)
+            @Html.DisplayNameFor(model => model.Cons.sizeE)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeE)
+            @Html.DisplayFor(model => model.Cons.sizeE)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeF)
+            @Html.DisplayNameFor(model => model.Cons.sizeF)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeF)
+            @Html.DisplayFor(model => model.Cons.sizeF)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sizeG)
+            @Html.DisplayNameFor(model => model.Cons.sizeG)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sizeG)
+            @Html.DisplayFor(model => model.Cons.sizeG)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.angle1)
+            @Html.DisplayNameFor(model => model.Cons.angle1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.angle1)
+            @Html.DisplayFor(model => model.Cons.angle1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.angle2)
+            @Html.DisplayNameFor(model => model.Cons.angle2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.angle2)
+            @Html.DisplayFor(model => model.Cons.angle2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.angle3)
+            @Html.DisplayNameFor(model => model.Cons.angle3)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.angle3)
+            @Html.DisplayFor(model => model.Cons.angle3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.angle4)
+            @Html.DisplayNameFor(model => model.Cons.angle4)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.angle4)
+            @Html.DisplayFor(model => model.Cons.angle4)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.pitch_height)
+            @Html.DisplayNameFor(model => model.Cons.pitch_height)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.pitch_height)
+            @Html.DisplayFor(model => model.Cons.pitch_height)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.profile_section_size)
+            @Html.DisplayNameFor(model => model.Cons.profile_section_size)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.profile_section_size)
+            @Html.DisplayFor(model => model.Cons.profile_section_size)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_1)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_1)
+            @Html.DisplayFor(model => model.Cons.sheet_width_1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_1)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_1)
+            @Html.DisplayFor(model => model.Cons.sheet_height_1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_2)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_2)
+            @Html.DisplayFor(model => model.Cons.sheet_width_2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_2)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_2)
+            @Html.DisplayFor(model => model.Cons.sheet_height_2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_3)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_3)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_3)
+            @Html.DisplayFor(model => model.Cons.sheet_width_3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_3)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_3)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_3)
+            @Html.DisplayFor(model => model.Cons.sheet_height_3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_4)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_4)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_4)
+            @Html.DisplayFor(model => model.Cons.sheet_width_4)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_4)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_4)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_4)
+            @Html.DisplayFor(model => model.Cons.sheet_height_4)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_5)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_5)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_5)
+            @Html.DisplayFor(model => model.Cons.sheet_width_5)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_5)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_5)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_5)
+            @Html.DisplayFor(model => model.Cons.sheet_height_5)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_6)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_6)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_6)
+            @Html.DisplayFor(model => model.Cons.sheet_width_6)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_6)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_6)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_6)
+            @Html.DisplayFor(model => model.Cons.sheet_height_6)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_7)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_7)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_7)
+            @Html.DisplayFor(model => model.Cons.sheet_width_7)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_7)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_7)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_7)
+            @Html.DisplayFor(model => model.Cons.sheet_height_7)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_8)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_8)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_8)
+            @Html.DisplayFor(model => model.Cons.sheet_width_8)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_8)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_8)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_8)
+            @Html.DisplayFor(model => model.Cons.sheet_height_8)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_9)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_9)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_9)
+            @Html.DisplayFor(model => model.Cons.sheet_width_9)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_9)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_9)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_9)
+            @Html.DisplayFor(model => model.Cons.sheet_height_9)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_width_10)
+            @Html.DisplayNameFor(model => model.Cons.sheet_width_10)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_width_10)
+            @Html.DisplayFor(model => model.Cons.sheet_width_10)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.sheet_height_10)
+            @Html.DisplayNameFor(model => model.Cons.sheet_height_10)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.sheet_height_10)
+            @Html.DisplayFor(model => model.Cons.sheet_height_10)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.flute_size)
+            @Html.DisplayNameFor(model => model.Cons.flute_size)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.flute_size)
+            @Html.DisplayFor(model => model.Cons.flute_size)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.color)
+            @Html.DisplayNameFor(model => model.Cons.color)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.color)
+            @Html.DisplayFor(model => model.Cons.color)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_color)
+            @Html.DisplayNameFor(model => model.Cons.roof_color)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_color)
+            @Html.DisplayFor(model => model.Cons.roof_color)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.new_firrings_req)
+            @Html.DisplayNameFor(model => model.Cons.new_firrings_req)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.new_firrings_req)
+            @Html.DisplayFor(model => model.Cons.new_firrings_req)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.new_gutters_req)
+            @Html.DisplayNameFor(model => model.Cons.new_gutters_req)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.new_gutters_req)
+            @Html.DisplayFor(model => model.Cons.new_gutters_req)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_glazing_thickness)
+            @Html.DisplayNameFor(model => model.Cons.roof_glazing_thickness)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_glazing_thickness)
+            @Html.DisplayFor(model => model.Cons.roof_glazing_thickness)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_pics)
+            @Html.DisplayNameFor(model => model.Cons.no_of_pics)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_pics)
+            @Html.DisplayFor(model => model.Cons.no_of_pics)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_photos)
+            @Html.DisplayNameFor(model => model.Cons.no_of_photos)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_photos)
+            @Html.DisplayFor(model => model.Cons.no_of_photos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.room_location)
+            @Html.DisplayNameFor(model => model.Cons.room_location)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.room_location)
+            @Html.DisplayFor(model => model.Cons.room_location)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_vids)
+            @Html.DisplayNameFor(model => model.Cons.no_of_vids)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_vids)
+            @Html.DisplayFor(model => model.Cons.no_of_vids)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bDifferentFromOriginal)
+            @Html.DisplayNameFor(model => model.Cons.bDifferentFromOriginal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bDifferentFromOriginal)
+            @Html.DisplayFor(model => model.Cons.bDifferentFromOriginal)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ChangeItemTo)
+            @Html.DisplayNameFor(model => model.Cons.ChangeItemTo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ChangeItemTo)
+            @Html.DisplayFor(model => model.Cons.ChangeItemTo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.print_name)
+            @Html.DisplayNameFor(model => model.Cons.print_name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.print_name)
+            @Html.DisplayFor(model => model.Cons.print_name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.wall_pos)
+            @Html.DisplayNameFor(model => model.Cons.wall_pos)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.wall_pos)
+            @Html.DisplayFor(model => model.Cons.wall_pos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.pitch_degree)
+            @Html.DisplayNameFor(model => model.Cons.pitch_degree)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.pitch_degree)
+            @Html.DisplayFor(model => model.Cons.pitch_degree)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.long_comments)
+            @Html.DisplayNameFor(model => model.Cons.long_comments)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.long_comments)
+            @Html.DisplayFor(model => model.Cons.long_comments)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bDrawingsOnly)
+            @Html.DisplayNameFor(model => model.Cons.bDrawingsOnly)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bDrawingsOnly)
+            @Html.DisplayFor(model => model.Cons.bDrawingsOnly)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cons_roof_under_drawn)
+            @Html.DisplayNameFor(model => model.Cons.cons_roof_under_drawn)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cons_roof_under_drawn)
+            @Html.DisplayFor(model => model.Cons.cons_roof_under_drawn)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.does_roof_fit_under)
+            @Html.DisplayNameFor(model => model.Cons.does_roof_fit_under)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.does_roof_fit_under)
+            @Html.DisplayFor(model => model.Cons.does_roof_fit_under)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.spars_line_up)
+            @Html.DisplayNameFor(model => model.Cons.spars_line_up)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.spars_line_up)
+            @Html.DisplayFor(model => model.Cons.spars_line_up)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_1)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_1)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_2)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_2)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_3)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_3)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_3)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_4)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_4)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_4)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_4)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_5)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_5)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_5)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_5)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_6)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_6)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_6)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_6)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_7)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_7)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_7)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_7)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_8)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_8)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_8)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_8)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_9)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_9)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_9)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_9)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.roof_sheets_quantity_10)
+            @Html.DisplayNameFor(model => model.Cons.roof_sheets_quantity_10)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.roof_sheets_quantity_10)
+            @Html.DisplayFor(model => model.Cons.roof_sheets_quantity_10)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.good_conditions)
+            @Html.DisplayNameFor(model => model.Cons.good_conditions)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.good_conditions)
+            @Html.DisplayFor(model => model.Cons.good_conditions)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ridge_length)
+            @Html.DisplayNameFor(model => model.Cons.ridge_length)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ridge_length)
+            @Html.DisplayFor(model => model.Cons.ridge_length)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.parts_to_order)
+            @Html.DisplayNameFor(model => model.Cons.parts_to_order)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.parts_to_order)
+            @Html.DisplayFor(model => model.Cons.parts_to_order)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.point_of_entry)
+            @Html.DisplayNameFor(model => model.Cons.point_of_entry)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.point_of_entry)
+            @Html.DisplayFor(model => model.Cons.point_of_entry)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.type_of_lockng_system_required)
+            @Html.DisplayNameFor(model => model.Cons.type_of_lockng_system_required)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.type_of_lockng_system_required)
+            @Html.DisplayFor(model => model.Cons.type_of_lockng_system_required)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.was_it_locked)
+            @Html.DisplayNameFor(model => model.Cons.was_it_locked)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.was_it_locked)
+            @Html.DisplayFor(model => model.Cons.was_it_locked)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glass_complete)
+            @Html.DisplayNameFor(model => model.Cons.glass_complete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glass_complete)
+            @Html.DisplayFor(model => model.Cons.glass_complete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.replace_glass)
+            @Html.DisplayNameFor(model => model.Cons.replace_glass)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.replace_glass)
+            @Html.DisplayFor(model => model.Cons.replace_glass)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.reason_not_repaired)
+            @Html.DisplayNameFor(model => model.Cons.reason_not_repaired)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.reason_not_repaired)
+            @Html.DisplayFor(model => model.Cons.reason_not_repaired)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bRepair)
+            @Html.DisplayNameFor(model => model.Cons.bRepair)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bRepair)
+            @Html.DisplayFor(model => model.Cons.bRepair)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fensa)
+            @Html.DisplayNameFor(model => model.Cons.fensa)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fensa)
+            @Html.DisplayFor(model => model.Cons.fensa)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WER_rating)
+            @Html.DisplayNameFor(model => model.Cons.WER_rating)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WER_rating)
+            @Html.DisplayFor(model => model.Cons.WER_rating)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.overall_length_of_sheet)
+            @Html.DisplayNameFor(model => model.Cons.overall_length_of_sheet)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.overall_length_of_sheet)
+            @Html.DisplayFor(model => model.Cons.overall_length_of_sheet)
         </dd>
-    </dl>
+                    </dl>
+                <td style="width:50%">
+                    <h4>Photos</h4>
+                    <hr />
+
+                    <table class="table">
+                        <tbody>
+
+
+                                @if (Model.Images != null)
+                                {
+                                    @foreach (var item in Model.Images)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <img src="data:image/png;base64,@item.Data" style='height: 100%; width: 100%; object-fit: contain' />
+
+                                        </td>
+                                    </tr>
+
+                                    }
+                                }
+
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

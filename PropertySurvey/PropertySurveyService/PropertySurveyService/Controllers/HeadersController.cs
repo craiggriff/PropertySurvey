@@ -74,9 +74,7 @@ namespace PropertySurveyService.Controllers
                 }
                 viewModel.SurveyItems = items;
 
-                List<PhotoImage> photoimages = new List<PhotoImage>();
-
-                photoimages = _context.Images.ToList();
+                List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 12) == viewModel.Header.udi_cont+"_cAH").ToList();
 
                 viewModel.Images = photoimages;
             }

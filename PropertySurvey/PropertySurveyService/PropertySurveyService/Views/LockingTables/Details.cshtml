@@ -1,4 +1,4 @@
-﻿@model PropertySurveyService.Models.LockingTable
+﻿@model PropertySurveyService.ViewModels.ItemIndexViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,348 +7,382 @@
 <h1>Details</h1>
 
 <div>
+
+                <table class="table">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+
     <h4>LockingTable</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HeaderId)
+            @Html.DisplayNameFor(model => model.Lockin.HeaderId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HeaderId)
+            @Html.DisplayFor(model => model.Lockin.HeaderId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.udi_cont)
+            @Html.DisplayNameFor(model => model.Lockin.udi_cont)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.udi_cont)
+            @Html.DisplayFor(model => model.Lockin.udi_cont)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.item_number)
+            @Html.DisplayNameFor(model => model.Lockin.item_number)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.item_number)
+            @Html.DisplayFor(model => model.Lockin.item_number)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isComplete)
+            @Html.DisplayNameFor(model => model.Lockin.isComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isComplete)
+            @Html.DisplayFor(model => model.Lockin.isComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.comments)
+            @Html.DisplayNameFor(model => model.Lockin.comments)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.comments)
+            @Html.DisplayFor(model => model.Lockin.comments)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.point_of_entry)
+            @Html.DisplayNameFor(model => model.Lockin.point_of_entry)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.point_of_entry)
+            @Html.DisplayFor(model => model.Lockin.point_of_entry)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.type_of_lockng_system_required)
+            @Html.DisplayNameFor(model => model.Lockin.type_of_lockng_system_required)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.type_of_lockng_system_required)
+            @Html.DisplayFor(model => model.Lockin.type_of_lockng_system_required)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.was_it_locked)
+            @Html.DisplayNameFor(model => model.Lockin.was_it_locked)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.was_it_locked)
+            @Html.DisplayFor(model => model.Lockin.was_it_locked)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_pics)
+            @Html.DisplayNameFor(model => model.Lockin.no_of_pics)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_pics)
+            @Html.DisplayFor(model => model.Lockin.no_of_pics)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_photos)
+            @Html.DisplayNameFor(model => model.Lockin.no_of_photos)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_photos)
+            @Html.DisplayFor(model => model.Lockin.no_of_photos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bMulti)
+            @Html.DisplayNameFor(model => model.Lockin.bMulti)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bMulti)
+            @Html.DisplayFor(model => model.Lockin.bMulti)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.item)
+            @Html.DisplayNameFor(model => model.Lockin.item)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.item)
+            @Html.DisplayFor(model => model.Lockin.item)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.locking_make)
+            @Html.DisplayNameFor(model => model.Lockin.locking_make)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.locking_make)
+            @Html.DisplayFor(model => model.Lockin.locking_make)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.locking_codes)
+            @Html.DisplayNameFor(model => model.Lockin.locking_codes)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.locking_codes)
+            @Html.DisplayFor(model => model.Lockin.locking_codes)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bDoorComplete)
+            @Html.DisplayNameFor(model => model.Lockin.bDoorComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bDoorComplete)
+            @Html.DisplayFor(model => model.Lockin.bDoorComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bWindowComplete)
+            @Html.DisplayNameFor(model => model.Lockin.bWindowComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bWindowComplete)
+            @Html.DisplayFor(model => model.Lockin.bWindowComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lock_colour)
+            @Html.DisplayNameFor(model => model.Lockin.lock_colour)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lock_colour)
+            @Html.DisplayFor(model => model.Lockin.lock_colour)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.pagenum)
+            @Html.DisplayNameFor(model => model.Lockin.pagenum)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.pagenum)
+            @Html.DisplayFor(model => model.Lockin.pagenum)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bDifferentFromOriginal)
+            @Html.DisplayNameFor(model => model.Lockin.bDifferentFromOriginal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bDifferentFromOriginal)
+            @Html.DisplayFor(model => model.Lockin.bDifferentFromOriginal)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ChangeItemTo)
+            @Html.DisplayNameFor(model => model.Lockin.ChangeItemTo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ChangeItemTo)
+            @Html.DisplayFor(model => model.Lockin.ChangeItemTo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.print_name)
+            @Html.DisplayNameFor(model => model.Lockin.print_name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.print_name)
+            @Html.DisplayFor(model => model.Lockin.print_name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.COD_Code)
+            @Html.DisplayNameFor(model => model.Lockin.COD_Code)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.COD_Code)
+            @Html.DisplayFor(model => model.Lockin.COD_Code)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cause_of_damage)
+            @Html.DisplayNameFor(model => model.Lockin.cause_of_damage)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cause_of_damage)
+            @Html.DisplayFor(model => model.Lockin.cause_of_damage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cause_of_damage_reason_different)
+            @Html.DisplayNameFor(model => model.Lockin.cause_of_damage_reason_different)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cause_of_damage_reason_different)
+            @Html.DisplayFor(model => model.Lockin.cause_of_damage_reason_different)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GearBox)
+            @Html.DisplayNameFor(model => model.Lockin.GearBox)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GearBox)
+            @Html.DisplayFor(model => model.Lockin.GearBox)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_vids)
+            @Html.DisplayNameFor(model => model.Lockin.no_of_vids)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_vids)
+            @Html.DisplayFor(model => model.Lockin.no_of_vids)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.left_bolt)
+            @Html.DisplayNameFor(model => model.Lockin.left_bolt)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.left_bolt)
+            @Html.DisplayFor(model => model.Lockin.left_bolt)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.right_bolt)
+            @Html.DisplayNameFor(model => model.Lockin.right_bolt)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.right_bolt)
+            @Html.DisplayFor(model => model.Lockin.right_bolt)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.parts_to_order)
+            @Html.DisplayNameFor(model => model.Lockin.parts_to_order)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.parts_to_order)
+            @Html.DisplayFor(model => model.Lockin.parts_to_order)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bLockComplete)
+            @Html.DisplayNameFor(model => model.Lockin.bLockComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bLockComplete)
+            @Html.DisplayFor(model => model.Lockin.bLockComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_size1)
+            @Html.DisplayNameFor(model => model.Lockin.l_size1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_size1)
+            @Html.DisplayFor(model => model.Lockin.l_size1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_size2)
+            @Html.DisplayNameFor(model => model.Lockin.l_size2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_size2)
+            @Html.DisplayFor(model => model.Lockin.l_size2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeA)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeA)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeA)
+            @Html.DisplayFor(model => model.Lockin.l_sizeA)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeB)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeB)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeB)
+            @Html.DisplayFor(model => model.Lockin.l_sizeB)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeC)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeC)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeC)
+            @Html.DisplayFor(model => model.Lockin.l_sizeC)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeD)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeD)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeD)
+            @Html.DisplayFor(model => model.Lockin.l_sizeD)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeE)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeE)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeE)
+            @Html.DisplayFor(model => model.Lockin.l_sizeE)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeF)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeF)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeF)
+            @Html.DisplayFor(model => model.Lockin.l_sizeF)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_sizeG)
+            @Html.DisplayNameFor(model => model.Lockin.l_sizeG)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_sizeG)
+            @Html.DisplayFor(model => model.Lockin.l_sizeG)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_num)
+            @Html.DisplayNameFor(model => model.Lockin.l_num)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_num)
+            @Html.DisplayFor(model => model.Lockin.l_num)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos1)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos1)
+            @Html.DisplayFor(model => model.Lockin.l_fpos1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos2)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos2)
+            @Html.DisplayFor(model => model.Lockin.l_fpos2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos3)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos3)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos3)
+            @Html.DisplayFor(model => model.Lockin.l_fpos3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos4)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos4)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos4)
+            @Html.DisplayFor(model => model.Lockin.l_fpos4)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos5)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos5)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos5)
+            @Html.DisplayFor(model => model.Lockin.l_fpos5)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos6)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos6)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos6)
+            @Html.DisplayFor(model => model.Lockin.l_fpos6)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_fpos7)
+            @Html.DisplayNameFor(model => model.Lockin.l_fpos7)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_fpos7)
+            @Html.DisplayFor(model => model.Lockin.l_fpos7)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lock_position)
+            @Html.DisplayNameFor(model => model.Lockin.lock_position)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lock_position)
+            @Html.DisplayFor(model => model.Lockin.lock_position)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype1)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype1)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype1)
+            @Html.DisplayFor(model => model.Lockin.l_itype1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype2)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype2)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype2)
+            @Html.DisplayFor(model => model.Lockin.l_itype2)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype3)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype3)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype3)
+            @Html.DisplayFor(model => model.Lockin.l_itype3)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype4)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype4)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype4)
+            @Html.DisplayFor(model => model.Lockin.l_itype4)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype5)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype5)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype5)
+            @Html.DisplayFor(model => model.Lockin.l_itype5)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype6)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype6)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype6)
+            @Html.DisplayFor(model => model.Lockin.l_itype6)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.l_itype7)
+            @Html.DisplayNameFor(model => model.Lockin.l_itype7)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.l_itype7)
+            @Html.DisplayFor(model => model.Lockin.l_itype7)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.long_comments)
+            @Html.DisplayNameFor(model => model.Lockin.long_comments)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.long_comments)
+            @Html.DisplayFor(model => model.Lockin.long_comments)
         </dd>
-    </dl>
+                    </dl>
+                <td style="width:50%">
+                    <h4>Photos</h4>
+                    <hr />
+
+                    <table class="table">
+                        <tbody>
+
+
+                                @if (Model.Images != null)
+                                {
+                                    @foreach (var item in Model.Images)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <img src="data:image/png;base64,@item.Data" style='height: 100%; width: 100%; object-fit: contain' />
+
+                                        </td>
+                                    </tr>
+
+                                    }
+                                }
+
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

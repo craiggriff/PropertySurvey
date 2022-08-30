@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: GlassTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.GlassTable == null)
             {
                 return NotFound();
             }
 
-            var glassTable = await _context.GlassTable
+            viewModel.Glass = await _context.GlassTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (glassTable == null)
+            if (viewModel.Glass == null)
             {
                 return NotFound();
             }
 
-            return View(glassTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Glass.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Glass.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: GlassTables/Create

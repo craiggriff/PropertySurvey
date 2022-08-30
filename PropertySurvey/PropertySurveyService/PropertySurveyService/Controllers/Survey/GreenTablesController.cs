@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: GreenTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.GreenTable == null)
             {
                 return NotFound();
             }
 
-            var greenTable = await _context.GreenTable
+            viewModel.Green = await _context.GreenTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (greenTable == null)
+            if (viewModel.Green == null)
             {
                 return NotFound();
             }
 
-            return View(greenTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Green.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Green.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: GreenTables/Create

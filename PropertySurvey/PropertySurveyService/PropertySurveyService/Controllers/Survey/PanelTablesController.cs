@@ -31,7 +31,7 @@ namespace PropertySurveyService.Controllers
         // GET: PanelTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            var viewModel = new PanelIndexViewModel();
+            var viewModel = new ItemIndexViewModel();
 
 
             if (id == null || _context.PanelTable == null)
@@ -46,13 +46,10 @@ namespace PropertySurveyService.Controllers
                 return NotFound();
             }
 
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0,8) == viewModel.Panel.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Panel.item_number.ToString("000")).ToList();
 
-            List<PhotoImage> photoimages = new List<PhotoImage>();
-
-            photoimages = _context.Images.Where(x => x.Filename!= null).ToList();
-
-            viewModel.Images = null;// photoimages;
-
+            viewModel.Images = photoimages;
 
             return View(viewModel);
         }

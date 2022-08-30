@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: GarageTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.GarageTable == null)
             {
                 return NotFound();
             }
 
-            var garageTable = await _context.GarageTable
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (garageTable == null)
+            viewModel.Garage = await _context.GarageTable
+               .FirstOrDefaultAsync(m => m.Id == id);
+            if (viewModel.Garage == null)
             {
                 return NotFound();
             }
 
-            return View(garageTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Garage.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Garage.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: GarageTables/Create

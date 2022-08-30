@@ -1,4 +1,4 @@
-﻿@model PropertySurveyService.Models.CompositeTable
+﻿@model PropertySurveyService.ViewModels.ItemIndexViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,510 +7,544 @@
 <h1>Details</h1>
 
 <div>
+
+                <table class="table">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+
     <h4>CompositeTable</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HeaderId)
+            @Html.DisplayNameFor(model => model.Comp.HeaderId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HeaderId)
+            @Html.DisplayFor(model => model.Comp.HeaderId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.udi_cont)
+            @Html.DisplayNameFor(model => model.Comp.udi_cont)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.udi_cont)
+            @Html.DisplayFor(model => model.Comp.udi_cont)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.item_number)
+            @Html.DisplayNameFor(model => model.Comp.item_number)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.item_number)
+            @Html.DisplayFor(model => model.Comp.item_number)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isComplete)
+            @Html.DisplayNameFor(model => model.Comp.isComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isComplete)
+            @Html.DisplayFor(model => model.Comp.isComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cause_of_damage)
+            @Html.DisplayNameFor(model => model.Comp.cause_of_damage)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cause_of_damage)
+            @Html.DisplayFor(model => model.Comp.cause_of_damage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cause_of_damage_reason_different)
+            @Html.DisplayNameFor(model => model.Comp.cause_of_damage_reason_different)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cause_of_damage_reason_different)
+            @Html.DisplayFor(model => model.Comp.cause_of_damage_reason_different)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.door_make)
+            @Html.DisplayNameFor(model => model.Comp.door_make)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.door_make)
+            @Html.DisplayFor(model => model.Comp.door_make)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.opens)
+            @Html.DisplayNameFor(model => model.Comp.opens)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.opens)
+            @Html.DisplayFor(model => model.Comp.opens)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.is_lock)
+            @Html.DisplayNameFor(model => model.Comp.is_lock)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.is_lock)
+            @Html.DisplayFor(model => model.Comp.is_lock)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.frame_colour_inside)
+            @Html.DisplayNameFor(model => model.Comp.frame_colour_inside)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.frame_colour_inside)
+            @Html.DisplayFor(model => model.Comp.frame_colour_inside)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.frame_colour_outside)
+            @Html.DisplayNameFor(model => model.Comp.frame_colour_outside)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.frame_colour_outside)
+            @Html.DisplayFor(model => model.Comp.frame_colour_outside)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.door_colour_inside)
+            @Html.DisplayNameFor(model => model.Comp.door_colour_inside)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.door_colour_inside)
+            @Html.DisplayFor(model => model.Comp.door_colour_inside)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.door_colour_outside)
+            @Html.DisplayNameFor(model => model.Comp.door_colour_outside)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.door_colour_outside)
+            @Html.DisplayFor(model => model.Comp.door_colour_outside)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.door_design)
+            @Html.DisplayNameFor(model => model.Comp.door_design)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.door_design)
+            @Html.DisplayFor(model => model.Comp.door_design)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glass_design)
+            @Html.DisplayNameFor(model => model.Comp.glass_design)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glass_design)
+            @Html.DisplayFor(model => model.Comp.glass_design)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.internal_width)
+            @Html.DisplayNameFor(model => model.Comp.internal_width)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.internal_width)
+            @Html.DisplayFor(model => model.Comp.internal_width)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.internal_height)
+            @Html.DisplayNameFor(model => model.Comp.internal_height)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.internal_height)
+            @Html.DisplayFor(model => model.Comp.internal_height)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.brick_width)
+            @Html.DisplayNameFor(model => model.Comp.brick_width)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.brick_width)
+            @Html.DisplayFor(model => model.Comp.brick_width)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.brick_height)
+            @Html.DisplayNameFor(model => model.Comp.brick_height)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.brick_height)
+            @Html.DisplayFor(model => model.Comp.brick_height)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.trickle_vents)
+            @Html.DisplayNameFor(model => model.Comp.trickle_vents)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.trickle_vents)
+            @Html.DisplayFor(model => model.Comp.trickle_vents)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.addons)
+            @Html.DisplayNameFor(model => model.Comp.addons)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.addons)
+            @Html.DisplayFor(model => model.Comp.addons)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.addons_height)
+            @Html.DisplayNameFor(model => model.Comp.addons_height)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.addons_height)
+            @Html.DisplayFor(model => model.Comp.addons_height)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.addons_width)
+            @Html.DisplayNameFor(model => model.Comp.addons_width)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.addons_width)
+            @Html.DisplayFor(model => model.Comp.addons_width)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.handle_colour)
+            @Html.DisplayNameFor(model => model.Comp.handle_colour)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.handle_colour)
+            @Html.DisplayFor(model => model.Comp.handle_colour)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.threshold_type)
+            @Html.DisplayNameFor(model => model.Comp.threshold_type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.threshold_type)
+            @Html.DisplayFor(model => model.Comp.threshold_type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lever_pad_handles)
+            @Html.DisplayNameFor(model => model.Comp.lever_pad_handles)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lever_pad_handles)
+            @Html.DisplayFor(model => model.Comp.lever_pad_handles)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glass_pattern)
+            @Html.DisplayNameFor(model => model.Comp.glass_pattern)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glass_pattern)
+            @Html.DisplayFor(model => model.Comp.glass_pattern)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glass_type)
+            @Html.DisplayNameFor(model => model.Comp.glass_type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glass_type)
+            @Html.DisplayFor(model => model.Comp.glass_type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.spacer_thickness)
+            @Html.DisplayNameFor(model => model.Comp.spacer_thickness)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.spacer_thickness)
+            @Html.DisplayFor(model => model.Comp.spacer_thickness)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.spacer_colour)
+            @Html.DisplayNameFor(model => model.Comp.spacer_colour)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.spacer_colour)
+            @Html.DisplayFor(model => model.Comp.spacer_colour)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.profile_type)
+            @Html.DisplayNameFor(model => model.Comp.profile_type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.profile_type)
+            @Html.DisplayFor(model => model.Comp.profile_type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.room_location)
+            @Html.DisplayNameFor(model => model.Comp.room_location)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.room_location)
+            @Html.DisplayFor(model => model.Comp.room_location)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.special_glass)
+            @Html.DisplayNameFor(model => model.Comp.special_glass)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.special_glass)
+            @Html.DisplayFor(model => model.Comp.special_glass)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.comments)
+            @Html.DisplayNameFor(model => model.Comp.comments)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.comments)
+            @Html.DisplayFor(model => model.Comp.comments)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_CWidth)
+            @Html.DisplayNameFor(model => model.Comp.lead_CWidth)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_CWidth)
+            @Html.DisplayFor(model => model.Comp.lead_CWidth)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_CHeight)
+            @Html.DisplayNameFor(model => model.Comp.lead_CHeight)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_CHeight)
+            @Html.DisplayFor(model => model.Comp.lead_CHeight)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_anti_rattle)
+            @Html.DisplayNameFor(model => model.Comp.lead_anti_rattle)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_anti_rattle)
+            @Html.DisplayFor(model => model.Comp.lead_anti_rattle)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_thickness)
+            @Html.DisplayNameFor(model => model.Comp.lead_thickness)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_thickness)
+            @Html.DisplayFor(model => model.Comp.lead_thickness)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_sod)
+            @Html.DisplayNameFor(model => model.Comp.lead_sod)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_sod)
+            @Html.DisplayFor(model => model.Comp.lead_sod)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_type)
+            @Html.DisplayNameFor(model => model.Comp.lead_type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_type)
+            @Html.DisplayFor(model => model.Comp.lead_type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.docl)
+            @Html.DisplayNameFor(model => model.Comp.docl)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.docl)
+            @Html.DisplayFor(model => model.Comp.docl)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.letteredit)
+            @Html.DisplayNameFor(model => model.Comp.letteredit)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.letteredit)
+            @Html.DisplayFor(model => model.Comp.letteredit)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.letter_box_pos)
+            @Html.DisplayNameFor(model => model.Comp.letter_box_pos)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.letter_box_pos)
+            @Html.DisplayFor(model => model.Comp.letter_box_pos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.pet_flap)
+            @Html.DisplayNameFor(model => model.Comp.pet_flap)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.pet_flap)
+            @Html.DisplayFor(model => model.Comp.pet_flap)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.pet_type)
+            @Html.DisplayNameFor(model => model.Comp.pet_type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.pet_type)
+            @Html.DisplayFor(model => model.Comp.pet_type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.pet_magnetic)
+            @Html.DisplayNameFor(model => model.Comp.pet_magnetic)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.pet_magnetic)
+            @Html.DisplayFor(model => model.Comp.pet_magnetic)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glaze)
+            @Html.DisplayNameFor(model => model.Comp.glaze)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glaze)
+            @Html.DisplayFor(model => model.Comp.glaze)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.print_name)
+            @Html.DisplayNameFor(model => model.Comp.print_name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.print_name)
+            @Html.DisplayFor(model => model.Comp.print_name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_bDiamondComplete)
+            @Html.DisplayNameFor(model => model.Comp.lead_bDiamondComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_bDiamondComplete)
+            @Html.DisplayFor(model => model.Comp.lead_bDiamondComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_bGeorgianComplete)
+            @Html.DisplayNameFor(model => model.Comp.lead_bGeorgianComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_bGeorgianComplete)
+            @Html.DisplayFor(model => model.Comp.lead_bGeorgianComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_bBarComplete)
+            @Html.DisplayNameFor(model => model.Comp.lead_bBarComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_bBarComplete)
+            @Html.DisplayFor(model => model.Comp.lead_bBarComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_pics)
+            @Html.DisplayNameFor(model => model.Comp.no_of_pics)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_pics)
+            @Html.DisplayFor(model => model.Comp.no_of_pics)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_photos)
+            @Html.DisplayNameFor(model => model.Comp.no_of_photos)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_photos)
+            @Html.DisplayFor(model => model.Comp.no_of_photos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.no_of_vids)
+            @Html.DisplayNameFor(model => model.Comp.no_of_vids)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.no_of_vids)
+            @Html.DisplayFor(model => model.Comp.no_of_vids)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bDifferentFromOriginal)
+            @Html.DisplayNameFor(model => model.Comp.bDifferentFromOriginal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bDifferentFromOriginal)
+            @Html.DisplayFor(model => model.Comp.bDifferentFromOriginal)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lock_other_text)
+            @Html.DisplayNameFor(model => model.Comp.lock_other_text)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lock_other_text)
+            @Html.DisplayFor(model => model.Comp.lock_other_text)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.head_drip)
+            @Html.DisplayNameFor(model => model.Comp.head_drip)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.head_drip)
+            @Html.DisplayFor(model => model.Comp.head_drip)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ChangeItemTo)
+            @Html.DisplayNameFor(model => model.Comp.ChangeItemTo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ChangeItemTo)
+            @Html.DisplayFor(model => model.Comp.ChangeItemTo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.cills)
+            @Html.DisplayNameFor(model => model.Comp.cills)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.cills)
+            @Html.DisplayFor(model => model.Comp.cills)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.door_wood)
+            @Html.DisplayNameFor(model => model.Comp.door_wood)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.door_wood)
+            @Html.DisplayFor(model => model.Comp.door_wood)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.hinged_on)
+            @Html.DisplayNameFor(model => model.Comp.hinged_on)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.hinged_on)
+            @Html.DisplayFor(model => model.Comp.hinged_on)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.reason_not_repaired)
+            @Html.DisplayNameFor(model => model.Comp.reason_not_repaired)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.reason_not_repaired)
+            @Html.DisplayFor(model => model.Comp.reason_not_repaired)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_comments)
+            @Html.DisplayNameFor(model => model.Comp.lead_comments)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_comments)
+            @Html.DisplayFor(model => model.Comp.lead_comments)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.parts_to_order)
+            @Html.DisplayNameFor(model => model.Comp.parts_to_order)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.parts_to_order)
+            @Html.DisplayFor(model => model.Comp.parts_to_order)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.is_a_flat)
+            @Html.DisplayNameFor(model => model.Comp.is_a_flat)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.is_a_flat)
+            @Html.DisplayFor(model => model.Comp.is_a_flat)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.point_of_entry)
+            @Html.DisplayNameFor(model => model.Comp.point_of_entry)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.point_of_entry)
+            @Html.DisplayFor(model => model.Comp.point_of_entry)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.type_of_lockng_system_required)
+            @Html.DisplayNameFor(model => model.Comp.type_of_lockng_system_required)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.type_of_lockng_system_required)
+            @Html.DisplayFor(model => model.Comp.type_of_lockng_system_required)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.was_it_locked)
+            @Html.DisplayNameFor(model => model.Comp.was_it_locked)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.was_it_locked)
+            @Html.DisplayFor(model => model.Comp.was_it_locked)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fire_door)
+            @Html.DisplayNameFor(model => model.Comp.fire_door)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fire_door)
+            @Html.DisplayFor(model => model.Comp.fire_door)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_CWidthf)
+            @Html.DisplayNameFor(model => model.Comp.lead_CWidthf)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_CWidthf)
+            @Html.DisplayFor(model => model.Comp.lead_CWidthf)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_CHeightf)
+            @Html.DisplayNameFor(model => model.Comp.lead_CHeightf)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_CHeightf)
+            @Html.DisplayFor(model => model.Comp.lead_CHeightf)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_CWidths)
+            @Html.DisplayNameFor(model => model.Comp.lead_CWidths)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_CWidths)
+            @Html.DisplayFor(model => model.Comp.lead_CWidths)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.lead_CHeights)
+            @Html.DisplayNameFor(model => model.Comp.lead_CHeights)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.lead_CHeights)
+            @Html.DisplayFor(model => model.Comp.lead_CHeights)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.glass_complete)
+            @Html.DisplayNameFor(model => model.Comp.glass_complete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.glass_complete)
+            @Html.DisplayFor(model => model.Comp.glass_complete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.replace_glass)
+            @Html.DisplayNameFor(model => model.Comp.replace_glass)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.replace_glass)
+            @Html.DisplayFor(model => model.Comp.replace_glass)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bRepair)
+            @Html.DisplayNameFor(model => model.Comp.bRepair)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bRepair)
+            @Html.DisplayFor(model => model.Comp.bRepair)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.fensa)
+            @Html.DisplayNameFor(model => model.Comp.fensa)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.fensa)
+            @Html.DisplayFor(model => model.Comp.fensa)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WER_rating)
+            @Html.DisplayNameFor(model => model.Comp.WER_rating)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WER_rating)
+            @Html.DisplayFor(model => model.Comp.WER_rating)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.gaskets)
+            @Html.DisplayNameFor(model => model.Comp.gaskets)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.gaskets)
+            @Html.DisplayFor(model => model.Comp.gaskets)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.gaskets_text)
+            @Html.DisplayNameFor(model => model.Comp.gaskets_text)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.gaskets_text)
+            @Html.DisplayFor(model => model.Comp.gaskets_text)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.handles_req)
+            @Html.DisplayNameFor(model => model.Comp.handles_req)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.handles_req)
+            @Html.DisplayFor(model => model.Comp.handles_req)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.bHandleDrawingComplete)
+            @Html.DisplayNameFor(model => model.Comp.bHandleDrawingComplete)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.bHandleDrawingComplete)
+            @Html.DisplayFor(model => model.Comp.bHandleDrawingComplete)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.handles_text)
+            @Html.DisplayNameFor(model => model.Comp.handles_text)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.handles_text)
+            @Html.DisplayFor(model => model.Comp.handles_text)
         </dd>
-    </dl>
+                    </dl>
+                <td style="width:50%">
+                    <h4>Photos</h4>
+                    <hr />
+
+                    <table class="table">
+                        <tbody>
+
+
+                                @if (Model.Images != null)
+                                {
+                                    @foreach (var item in Model.Images)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <img src="data:image/png;base64,@item.Data" style='height: 100%; width: 100%; object-fit: contain' />
+
+                                        </td>
+                                    </tr>
+
+                                    }
+                                }
+
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

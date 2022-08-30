@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: AlumTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.AlumTable == null)
             {
                 return NotFound();
             }
 
-            var alumTable = await _context.AlumTable
+            viewModel.Alum = await _context.AlumTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (alumTable == null)
+            if (viewModel.Alum == null)
             {
                 return NotFound();
             }
 
-            return View(alumTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Alum.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Alum.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: AlumTables/Create

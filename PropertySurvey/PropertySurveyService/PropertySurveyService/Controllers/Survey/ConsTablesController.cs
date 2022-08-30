@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: ConsTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.ConsTable == null)
             {
                 return NotFound();
             }
 
-            var consTable = await _context.ConsTable
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (consTable == null)
+            viewModel.Cons = await _context.ConsTable
+               .FirstOrDefaultAsync(m => m.Id == id);
+            if (viewModel.Cons == null)
             {
                 return NotFound();
             }
 
-            return View(consTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Cons.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Cons.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: ConsTables/Create

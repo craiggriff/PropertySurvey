@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: LockingTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.LockingTable == null)
             {
                 return NotFound();
             }
 
-            var lockingTable = await _context.LockingTable
+            viewModel.Lockin = await _context.LockingTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (lockingTable == null)
+            if (viewModel.Lockin == null)
             {
                 return NotFound();
             }
 
-            return View(lockingTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Lockin.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Lockin.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: LockingTables/Create

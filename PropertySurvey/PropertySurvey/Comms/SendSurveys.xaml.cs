@@ -76,21 +76,14 @@ namespace PropertySurvey
                 {
 
                     SendImagesJson();
+                    SendSurveyJson();
                 }
                 catch (Exception e)
                 {
                     DisplayAlert("error sending", e.ToString(), "OK");
                 }                
                 
-                try
-                {
-                    
-                    //SendSurveyJson();
-                }
-                catch (Exception e)
-                {
-                    DisplayAlert("error sending", e.ToString(), "OK");
-                }
+
             }
              
        

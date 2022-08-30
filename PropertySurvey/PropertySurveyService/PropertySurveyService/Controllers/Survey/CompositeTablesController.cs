@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using PropertySurveyService.ViewModels;
 
 namespace PropertySurveyService.Controllers
 {
@@ -30,19 +31,26 @@ namespace PropertySurveyService.Controllers
         // GET: CompositeTables/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            var viewModel = new ItemIndexViewModel();
+
             if (id == null || _context.CompositeTable == null)
             {
                 return NotFound();
             }
 
-            var compositeTable = await _context.CompositeTable
+            viewModel.Comp = await _context.CompositeTable
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (compositeTable == null)
+            if (viewModel.Comp == null)
             {
                 return NotFound();
             }
 
-            return View(compositeTable);
+            List<PhotoImage> photoimages = _context.Images.Where(x => x.Filename.Substring(0, 8) == viewModel.Comp.udi_cont &&
+            x.Filename.Substring(12, 3) == viewModel.Comp.item_number.ToString("000")).ToList();
+
+            viewModel.Images = photoimages;
+
+            return View(viewModel);
         }
 
         // GET: CompositeTables/Create
