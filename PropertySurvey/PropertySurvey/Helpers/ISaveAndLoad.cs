@@ -16,6 +16,8 @@ namespace PropertySurvey
         bool SaveStream(string filename, System.IO.Stream stream);
 
         bool SaveBinary(string filename, byte[] bin);
+
+        bool SaveMemoryStream(string filename, MemoryStream ms);
         byte[] LoadBinary(string filename);
 
         byte[] LoadBinaryRange(string filename, int start, int to);

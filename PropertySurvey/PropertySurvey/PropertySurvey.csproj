@@ -18,7 +18,7 @@
   <ItemGroup>
     <Compile Remove="Views\Accidents\WorkAccident.xaml.cs" />
     <Compile Remove="Comms\SendPictures.xaml.cs" />
-    <Compile Remove="Controls\Helpers\ICameraHelper.cs" />
+    <Compile Remove="Helpers\ICameraHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -56,7 +56,7 @@ namespace PropertySurvey
         private void StartUpCamera2()
         {
             //Xamarin.Forms.DependencyService.Register<ICameraHelper>();
-            DependencyService.Get<ICameraHelper>().StartCamera();
+            //DependencyService.Get<ICameraHelper>().StartCamera();
         }
 
         private void SetMileageButtons()

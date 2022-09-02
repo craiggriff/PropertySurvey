@@ -383,7 +383,7 @@ namespace PropertySurvey
                     //bitmap.bitmap = SKBitmap.Decode(stream);
                     SKBitmap bitmap = SKBitmap.Decode(stream);
 
-                    if (image_rotation == "6")
+                    if (image_rotation == "1")
                         this.bitmap = new TouchManipulationBitmap(bitmap, true, ScreenWidth, ScreenHeight);
                     else
                         this.bitmap = new TouchManipulationBitmap(bitmap, false, ScreenWidth, ScreenHeight);

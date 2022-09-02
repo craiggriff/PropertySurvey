@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using PropertySurvey.Droid;
 using Android.Media;
+using SkiaSharp;
 
 [assembly: Dependency(typeof(SaveAndLoad_Android))]
 
@@ -79,6 +80,24 @@ namespace PropertySurvey.Droid
                 return false;
             }
         }
+
+        public bool SaveMemoryStream(string filename, MemoryStream ms)
+        {
+            try
+            {
+                using (var fs = new FileStream(CreatePathToFile(filename), FileMode.Create, FileAccess.Write))
+                {
+                    ms.WriteTo(fs);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in process: {0}", ex);
+                return false;
+            }
+        }
+
 
         public byte[] LoadBinaryFromDownloads(string filename)
         {
