@@ -98,11 +98,11 @@ namespace PropertySurvey
             byte[] vidbytes = ReadFully(file.GetStream());
             App.files.SaveBinary(Path.Combine("Photos", App.net.photo_fname), vidbytes);
 
-            byte[] bytes = DependencyService.Get<ICameraHelper>().GenerateThumbImage(App.files.GetLocalFilePath(Path.Combine("Photos", App.net.photo_fname)), 1);
+            //byte[] bytes = DependencyService.Get<ICameraHelper>().GenerateThumbImage(App.files.GetLocalFilePath(Path.Combine("Photos", App.net.photo_fname)), 1);
 
             App.net.photo_fname = App.net.photo_fname.Substring(0, App.net.photo_fname.Length - 3) + "jpg";
 
-            App.files.SaveBinary(Path.Combine("Photos", App.net.photo_fname), bytes);
+            //App.files.SaveBinary(Path.Combine("Photos", App.net.photo_fname), bytes);
 
             UpdateFileList();
             CreateList();

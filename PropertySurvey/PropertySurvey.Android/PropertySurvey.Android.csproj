@@ -103,7 +103,7 @@
       <Version>28.0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Core">
-      <Version>1.8.0.1</Version>
+      <Version>1.7.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V13">
       <Version>1.0.0.14</Version>
@@ -128,11 +128,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoFitTextureView.cs" />
-    <Compile Include="Camera2BasicFragment.cs" />
-    <Compile Include="Camera2VideoFragment.cs" />
-    <Compile Include="CameraHelper.cs" />
+    <Compile Include="Camera2\CameraCaptureListener.cs" />
+    <Compile Include="Camera2\CameraCaptureStateListener.cs" />
+    <Compile Include="Camera2\CameraCaptureStillPictureSessionCAllback.cs" />
+    <Compile Include="Camera2\CameraDroid.cs" />
+    <Compile Include="Camera2\CameraStateListener.cs" />
+    <Compile Include="Camera2\CameraViewServiceRenderer.cs" />
+    <Compile Include="Camera2\ImageAvailableListener.cs" />
     <Compile Include="CompareSizesByArea.cs" />
-    <Compile Include="ConfirmDialog.cs" />
     <Compile Include="CustomPickerRenderer.cs" />
     <Compile Include="ErrorDialog.cs" />
     <Compile Include="FormsVideLibrary\VideoPicker.cs" />
@@ -142,15 +145,6 @@
     <AndroidResource Include="Resources\layout\provider_paths.xml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
-    <Compile Include="MyCameraStateCallback.cs" />
-    <Compile Include="MySurfaceTextureListener.cs" />
-    <Compile Include="PreviewCaptureStateCallback.cs" />
-    <Compile Include="Resources\Listners\Camera2BasicSurfaceTextureListner.cs" />
-    <Compile Include="Resources\Listners\CameraCaptureListner.cs" />
-    <Compile Include="Resources\Listners\CameraCaptureSessionCallback.cs" />
-    <Compile Include="Resources\Listners\CameraCaptureStillPictureSessionCallback.cs" />
-    <Compile Include="Resources\Listners\CameraStateListner.cs" />
-    <Compile Include="Resources\Listners\ImageAvailableListner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="SaveAndLoad_Android.cs" />
@@ -1133,5 +1127,9 @@
       <Name>PropertySurvey</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\CameraLayout.xml" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

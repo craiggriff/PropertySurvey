@@ -88,6 +88,8 @@ namespace PropertySurvey
         public int ScreenWidth = 0;
         public int ScreenHeight = 0;
 
+        public static byte[] cameraImage = null;
+
         public bool is_landscape = false;
         //public string cereal = "jOFgo6Pn8xeNc6KnQyApA6UauUw=";
         public string cereal = "jOFgo6Pn8xeNc6KnQyApA6UauUw=";
@@ -331,16 +333,9 @@ namespace PropertySurvey
 
         public bool taking_photo = false;
 
-        public void StartCamera()
+        public void SaveCameraImage(byte[] cam_image)
         {
-            Device.BeginInvokeOnMainThread(StartUpCamera2);
-        }
-
-        private void StartUpCamera2()
-        {
-            
-            //DependencyService.Get<ICameraHelper>().StartCameraLandscape();
-            DependencyService.Get<ICameraHelper>().StartCameraOrientated();
+            cameraImage = cam_image;
         }
 
         public void MakeVideoFilename()
@@ -352,28 +347,7 @@ namespace PropertySurvey
             App.net.photo_fname = App.net.photo_fname + string.Format("{0:000}", App.net.root_item_number);
             App.net.photo_fname = App.net.photo_fname + string.Format("{0:00}.mp4", App.net.image_number);
         }
-        /*
-        private void LoadRALCodes()
-        {
-            Uri linesUri = new Uri("/MartindalesSurveyorApp;component/Items/Timber/RALCodes.txt", UriKind.Relative);
-            StreamResourceInfo stream = App.GetResourceStream(linesUri);
-            StreamReader streamReader = new StreamReader(stream.Stream);
-            string line;
 
-            ral_codes = new List<string>();
-            ral_names = new List<string>();
-            ral_string = new List<string>();
-
-            while ((line = streamReader.ReadLine()) != null)
-            {
-                string[] cols = line.Split('\t');
-                ral_codes.Add(cols[0]);
-                ral_names.Add(cols[1]);
-                ral_string.Add(cols[0] + " " + cols[1]);
-            }
-            streamReader.Close();
-        }
-        */
         public bool DoRep()
         {
             if (!App.CurrentApp.HeaderRecord.sn_name.Contains("MA Assist Ltd")
@@ -696,8 +670,6 @@ namespace PropertySurvey
             App.net.App_Settings.iemi = "na";// DependencyService.Get<ICameraHelper>().GetIdentifier();
 
             data.SaveSettings();
-            Xamarin.Forms.DependencyService.Register<ICameraHelper>();
-
 
             CrossMedia.Current.Initialize();
 

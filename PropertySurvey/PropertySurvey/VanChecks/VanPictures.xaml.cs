@@ -109,7 +109,7 @@ namespace PropertySurvey
 
             //Xamarin.Forms.DependencyService.Register<ICameraHelper>();
             //DependencyService.Get<ICameraHelper>().StartCameraLandscape();
-            DependencyService.Get<ICameraHelper>().StartCameraLandscapeFixed();
+            //DependencyService.Get<ICameraHelper>().StartCameraLandscapeFixed();
         }
         private void MakeVanFilename()
         {

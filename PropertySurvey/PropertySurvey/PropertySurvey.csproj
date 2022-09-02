@@ -18,6 +18,7 @@
   <ItemGroup>
     <Compile Remove="Accidents\WorkAccident.xaml.cs" />
     <Compile Remove="Comms\SendPictures.xaml.cs" />
+    <Compile Remove="Controls\Helpers\ICameraHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1460,6 +1461,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\SendWorkAccidents.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pictures\CameraView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ReceiveSurveysXML.xaml">

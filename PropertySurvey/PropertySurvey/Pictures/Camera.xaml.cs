@@ -14,6 +14,7 @@ using TouchTracking;
 using MartControls;
 using Xamarin.Essentials;
 using Plugin.Media;
+using PropertySurvey.CustomViews;
 
 namespace PropertySurvey
 {
@@ -56,6 +57,13 @@ namespace PropertySurvey
                     //add_button.Text = "";
                 }
             }
+        }
+
+        private void OnPictureFinished()
+        {
+
+            //            byte[] photo = CameraPreview;
+            DisplayAlert("Confirm", "Picture Taken", "", "Ok");
         }
 
         public void UpdateFileList()
@@ -434,9 +442,7 @@ namespace PropertySurvey
 
         private void StartUpCamera2()
         {
-            //Xamarin.Forms.DependencyService.Register<ICameraHelper>();
-            //DependencyService.Get<ICameraHelper>().StartCameraLandscape();
-            DependencyService.Get<ICameraHelper>().StartCameraOrientated();
+            Navigation.PushAsync(new CameraView(), false);
         }
 
         private void DrawPictureNumber()
