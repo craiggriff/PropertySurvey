@@ -28,8 +28,8 @@ namespace MartControls
             
             if (rotate==true)
             {
-                Matrix = SKMatrix.MakeIdentity();
-                SKMatrix scale = SKMatrix.MakeScale(0.3f,0.3f);
+                Matrix = SKMatrix.CreateIdentity();
+                SKMatrix scale = SKMatrix.CreateScale(0.3f,0.3f);
                 SKMatrix matrix = Matrix;
 
                 SKMatrix.PostConcat(ref matrix, scale);

@@ -188,9 +188,4 @@ namespace PropertySurvey.Droid
         }
 
     }
-
-
-
-
-
 }

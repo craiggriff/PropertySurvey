@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Accidents\WorkAccident.xaml.cs" />
+    <Compile Remove="Views\Accidents\WorkAccident.xaml.cs" />
     <Compile Remove="Comms\SendPictures.xaml.cs" />
     <Compile Remove="Controls\Helpers\ICameraHelper.cs" />
   </ItemGroup>
@@ -1211,10 +1211,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Accidents\AccidentsVehicle.xaml.cs">
+    <Compile Update="Views\Accidents\AccidentsVehicle.xaml.cs">
       <DependentUpon>AccidentsVehicle.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Accidents\AccidentDetailsVehicle.xaml.cs">
+    <Compile Update="Views\Accidents\AccidentDetailsVehicle.xaml.cs">
       <DependentUpon>AccidentDetailsVehicle.xaml</DependentUpon>
     </Compile>
     <Compile Update="Comms\ReceiveSurveys.xaml.cs">
@@ -1229,22 +1229,22 @@
     <Compile Update="ItemsFitter\ViewDrawing.xaml.cs">
       <DependentUpon>ViewDrawing.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Items\Greenhouse.xaml.cs">
+    <Compile Update="Views\Items\Greenhouse.xaml.cs">
       <DependentUpon>Greenhouse.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Items\LeadAndBar\BackToBackInfo.xaml.cs">
+    <Compile Update="Views\Items\LeadAndBar\BackToBackInfo.xaml.cs">
       <DependentUpon>BackToBackInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Items\LeadAndBar\DiamondLeadInfo.xaml.cs">
+    <Compile Update="Views\Items\LeadAndBar\DiamondLeadInfo.xaml.cs">
       <DependentUpon>DiamondLeadInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Items\LeadAndBar\LeadBarPosition.xaml.cs">
+    <Compile Update="Views\Items\LeadAndBar\LeadBarPosition.xaml.cs">
       <DependentUpon>LeadBarPosition.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Items\LeadAndBar\ViewLeaded.xaml.cs">
+    <Compile Update="Views\Items\LeadAndBar\ViewLeaded.xaml.cs">
       <DependentUpon>ViewLeaded.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Items\TimberItem.xaml.cs">
+    <Compile Update="Views\Items\TimberItem.xaml.cs">
       <DependentUpon>TimberItem.xaml</DependentUpon>
     </Compile>
     <Compile Update="SpotCheck\SpotCheckReport.xaml.cs">
@@ -1253,61 +1253,61 @@
     <Compile Update="SpotCheck\SpotCheckHeader.xaml.cs">
       <DependentUpon>SpotCheckHeader.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Survey\MileageSheetInput.xaml.cs">
+    <Compile Update="Views\Survey\MileageSheetInput.xaml.cs">
       <DependentUpon>MileageSheetInput.xaml</DependentUpon>
     </Compile>
     <Compile Update="Pictures\TemplateBeading.xaml.cs">
       <DependentUpon>TemplateBeading.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Survey\HealthAndSafety.xaml.cs">
+    <Compile Update="Views\Survey\HealthAndSafety.xaml.cs">
       <DependentUpon>HealthAndSafety.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Survey\WebViewView.xaml.cs">
+    <Compile Update="Views\Survey\WebViewView.xaml.cs">
       <DependentUpon>WebViewView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="VanChecks\ReceiveVanChecks.xaml.cs">
+    <Compile Update="Views\VanChecks\ReceiveVanChecks.xaml.cs">
       <DependentUpon>ReceiveVanChecks.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AccidentsFitter\WorkAccidents.xaml">
+    <EmbeddedResource Update="Views\AccidentsFitter\WorkAccidents.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\AccidentMenuVehicle.xaml">
+    <EmbeddedResource Update="Views\Accidents\AccidentMenuVehicle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\AccidentSign.xaml">
+    <EmbeddedResource Update="Views\Accidents\AccidentSign.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\AccidentsVehicle.xaml">
+    <EmbeddedResource Update="Views\Accidents\AccidentsVehicle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\CarouselValidateNoImage.xaml">
+    <EmbeddedResource Update="Views\Accidents\CarouselValidateNoImage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\InstructionsVehicle.xaml">
+    <EmbeddedResource Update="Views\Accidents\InstructionsVehicle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\AccidentDetailsVehicle.xaml">
+    <EmbeddedResource Update="Views\Accidents\AccidentDetailsVehicle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\OtherPersonVehicle.xaml">
+    <EmbeddedResource Update="Views\Accidents\OtherPersonVehicle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\PersonInCharge.xaml">
+    <EmbeddedResource Update="Views\Accidents\PersonInCharge.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\PoliceDetails.xaml">
+    <EmbeddedResource Update="Views\Accidents\PoliceDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\Witness.xaml">
+    <EmbeddedResource Update="Views\Accidents\Witness.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accidents\Witnesses.xaml">
+    <EmbeddedResource Update="Views\Accidents\Witnesses.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AccidentsFitter\WorkAccident.xaml">
+    <EmbeddedResource Update="Views\AccidentsFitter\WorkAccident.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\ReceiveShared.xaml">
@@ -1331,46 +1331,46 @@
     <EmbeddedResource Update="Controls\YesNoLabelEntrylabel.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Data\Functions\DiagnosticsPage.xaml">
+    <EmbeddedResource Update="Data\Context\DiagnosticsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterCompletion.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterCompletion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterInstructions.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterInstructions.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitIsComplete.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitIsComplete.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterComments.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterComments.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterMandate.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterMandate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterMandateGlobal.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterMandateGlobal.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterPhotosWarning.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterPhotosWarning.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterSign.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterSign.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterSignLintel.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterSignLintel.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterStockUsage.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterStockUsage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterWarning.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterWarning.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\FitterHeader.xaml">
+    <EmbeddedResource Update="Views\Fitter\FitterHeader.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\HingeWarning.xaml">
+    <EmbeddedResource Update="Views\Fitter\HingeWarning.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ItemsFitter\ViewAluminium.xaml">
@@ -1412,52 +1412,52 @@
     <EmbeddedResource Update="ItemsFitter\ViewUPVC.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LeadAndBar\ViewLeaded.xaml">
+    <EmbeddedResource Update="Views\Items\LeadAndBar\ViewLeaded.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\Locks\DoorLockShared.xaml">
+    <EmbeddedResource Update="Views\Items\Locks\DoorLockShared.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\RALSignature.xaml">
+    <EmbeddedResource Update="Views\Items\RALSignature.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\ReceiveFitting.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\MotorQuest.xaml">
+    <EmbeddedResource Update="Views\Fitter\MotorQuest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\MotorSign.xaml">
+    <EmbeddedResource Update="Views\Fitter\MotorSign.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\MotorSign2.xaml">
+    <EmbeddedResource Update="Views\Fitter\MotorSign2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\Remedial\RemReport.xaml">
+    <EmbeddedResource Update="Views\Fitter\Remedial\RemReport.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\ReportMessage.xaml">
+    <EmbeddedResource Update="Views\Fitter\ReportMessage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\TowerScaffoldCheck.xaml">
+    <EmbeddedResource Update="Views\Fitter\TowerScaffoldCheck.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\TSSign.xaml">
+    <EmbeddedResource Update="Views\Fitter\TSSign.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\UnfinishedCode.xaml">
+    <EmbeddedResource Update="Views\Fitter\UnfinishedCode.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\Remedial\RemedialHeader.xaml">
+    <EmbeddedResource Update="Views\Fitter\Remedial\RemedialHeader.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\Remedial\RemedialSign.xaml">
+    <EmbeddedResource Update="Views\Fitter\Remedial\RemedialSign.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\SendFittings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Fitter\Remedial\RemedialCompletion.xaml">
+    <EmbeddedResource Update="Views\Fitter\Remedial\RemedialCompletion.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\SendWorkAccidents.xaml">
@@ -1478,28 +1478,28 @@
     <EmbeddedResource Update="SpotCheck\SpotCheckReport.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\SendVanChecks.xaml">
+    <EmbeddedResource Update="Views\VanChecks\SendVanChecks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\ReceiveVanChecks.xaml">
+    <EmbeddedResource Update="Views\VanChecks\ReceiveVanChecks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\Diagram.xaml">
+    <EmbeddedResource Update="Views\VanChecks\Diagram.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\CustomerCareCard.xaml">
+    <EmbeddedResource Update="Views\Survey\CustomerCareCard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\MessageToInsurance.xaml">
+    <EmbeddedResource Update="Views\Survey\MessageToInsurance.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\ItemChanged.xaml">
+    <EmbeddedResource Update="Views\Survey\ItemChanged.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\BifoldSignature.xaml">
+    <EmbeddedResource Update="Views\Items\BifoldSignature.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\BifoldDoorType.xaml">
+    <EmbeddedResource Update="Views\Items\BifoldDoorType.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Comms\GetMessages.xaml">
@@ -1532,52 +1532,52 @@
     <EmbeddedResource Update="Controls\SpecialGlass.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\AluminiumItem.xaml">
+    <EmbeddedResource Update="Views\Items\AluminiumItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\CarouselValidate.xaml">
+    <EmbeddedResource Update="Views\Items\CarouselValidate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\ConservatoryItem.xaml">
+    <EmbeddedResource Update="Views\Items\ConservatoryItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\GarageItem.xaml">
+    <EmbeddedResource Update="Views\Items\GarageItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LeadAndBar\BackToBackInfo.xaml">
+    <EmbeddedResource Update="Views\Items\LeadAndBar\BackToBackInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LeadAndBar\DiamondLeadInfo.xaml">
+    <EmbeddedResource Update="Views\Items\LeadAndBar\DiamondLeadInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LeadAndBar\GeorgianBarInfo.xaml">
+    <EmbeddedResource Update="Views\Items\LeadAndBar\GeorgianBarInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LeadAndBar\GeorgianLeadInfo.xaml">
+    <EmbeddedResource Update="Views\Items\LeadAndBar\GeorgianLeadInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LeadAndBar\LeadBarPosition.xaml">
+    <EmbeddedResource Update="Views\Items\LeadAndBar\LeadBarPosition.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\BifoldItem.xaml">
+    <EmbeddedResource Update="Views\Items\BifoldItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LockItem.xaml">
+    <EmbeddedResource Update="Views\Items\LockItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\Locks\DoorLock.xaml">
+    <EmbeddedResource Update="Views\Items\Locks\DoorLock.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\Locks\WindowLock.xaml">
+    <EmbeddedResource Update="Views\Items\Locks\WindowLock.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\LockTypeChoose.xaml">
+    <EmbeddedResource Update="Views\Items\LockTypeChoose.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\RepairOrReplace.xaml">
+    <EmbeddedResource Update="Views\Items\RepairOrReplace.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\TimberItem.xaml">
+    <EmbeddedResource Update="Views\Items\TimberItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Login.xaml">
@@ -1586,22 +1586,22 @@
     <EmbeddedResource Update="Comms\SendSurveys.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\Repudiation.xaml">
+    <EmbeddedResource Update="Views\Survey\Repudiation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\Messages.xaml">
+    <EmbeddedResource Update="Views\Survey\Messages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\MileageList.xaml">
+    <EmbeddedResource Update="Views\Survey\MileageList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\MileageSend.xaml">
+    <EmbeddedResource Update="Views\Survey\MileageSend.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\MileageSheetInput.xaml">
+    <EmbeddedResource Update="Views\Survey\MileageSheetInput.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\MileageSign.xaml">
+    <EmbeddedResource Update="Views\Survey\MileageSign.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pictures\MediaPage.xaml">
@@ -1616,10 +1616,10 @@
     <EmbeddedResource Update="Pictures\DrawingText.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\Greenhouse.xaml">
+    <EmbeddedResource Update="Views\Items\Greenhouse.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Items\Panel.xaml">
+    <EmbeddedResource Update="Views\Items\Panel.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pictures\DrawingPage.xaml">
@@ -1658,61 +1658,60 @@
     <EmbeddedResource Update="Controls\YesNoQuestionLabel.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\SecuritySurvey.xaml">
+    <EmbeddedResource Update="Views\Survey\SecuritySurvey.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\SecuritySurveyMessage.xaml">
+    <EmbeddedResource Update="Views\Survey\SecuritySurveyMessage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanCar.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanCar.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanCheckedSignature.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanCheckedSignature.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanBrowse.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanBrowse.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanChecks.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanChecks.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanCheckType.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanCheckType.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanVan.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanVan.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanDriverSignature.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanDriverSignature.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanSignatures.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanSignatures.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanDelivery.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanDelivery.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanDeliveryVan.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanDeliveryVan.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanDiagrams.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanDiagrams.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanImages.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanImages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanPictures.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanPictures.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="VanChecks\VanPictures2.xaml">
+    <EmbeddedResource Update="Views\VanChecks\VanPictures2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Survey\WebViewView.xaml">
+    <EmbeddedResource Update="Views\Survey\WebViewView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Database\" />
   </ItemGroup>
 </Project>
