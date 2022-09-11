@@ -1,11 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PropertySurveyService.Data;
 using PropertySurveyService.Models;
+using Microsoft.AspNetCore.Identity;
+using PropertySurveyService.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<PropertySurveyServiceContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PropertySurveyServiceContext") ?? throw new InvalidOperationException("Connection string 'PropertySurveyServiceContext' not found.")));
+
+builder.Services.AddDefaultIdentity<PropertySurveyServiceUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<PropertySurveyServiceContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -241,11 +246,14 @@ app.MapPost("/SendSurveyImage", (ImageDTO imageDTO, PropertySurveyServiceContext
 
     return Task.FromResult(Results.Ok(return_record));
 });
+app.UseAuthentication();;
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Jobs}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

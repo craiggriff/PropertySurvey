@@ -1223,10 +1223,10 @@
     <Compile Update="Comms\SendWorkAccidents.xaml.cs">
       <DependentUpon>SendWorkAccidents.xaml</DependentUpon>
     </Compile>
-    <Compile Update="ItemsFitter\ViewLock.xaml.cs">
+    <Compile Update="Views\ItemsFitter\ViewLock.xaml.cs">
       <DependentUpon>ViewLock.xaml</DependentUpon>
     </Compile>
-    <Compile Update="ItemsFitter\ViewDrawing.xaml.cs">
+    <Compile Update="Views\ItemsFitter\ViewDrawing.xaml.cs">
       <DependentUpon>ViewDrawing.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Items\Greenhouse.xaml.cs">
@@ -1373,43 +1373,43 @@
     <EmbeddedResource Update="Views\Fitter\HingeWarning.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewAluminium.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewAluminium.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewBifold.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewBifold.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewComposite.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewComposite.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewConservatory.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewConservatory.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewLock.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewLock.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewGarage.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewGarage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewGlass.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewGlass.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewGreenhouse.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewGreenhouse.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewDrawing.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewDrawing.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewLocking.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewLocking.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewPanel.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewPanel.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewTimber.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewTimber.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ItemsFitter\ViewUPVC.xaml">
+    <EmbeddedResource Update="Views\ItemsFitter\ViewUPVC.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Items\LeadAndBar\ViewLeaded.xaml">
@@ -1712,6 +1712,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>

@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using PropertySurveyService.Models;
+
 
 namespace PropertySurveyService.Data
 {
-    public class PropertySurveyServiceContext : DbContext
+    public class PropertySurveyServiceContext : IdentityDbContext<PropertySurveyServiceUser>
     {
-        public PropertySurveyServiceContext (DbContextOptions<PropertySurveyServiceContext> options)
+        public PropertySurveyServiceContext(DbContextOptions<PropertySurveyServiceContext> options)
             : base(options)
         {
         }
@@ -31,5 +35,36 @@ namespace PropertySurveyService.Data
         public DbSet<PropertySurveyService.Models.UPVCTable> UPVCTable { get; set; } = default!;
 
         public DbSet<PropertySurveyService.Models.PhotoImage> Images { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Customize the ASP.NET Identity model and override the defaults if needed.
+            // For example, you can rename the ASP.NET Identity table names and more.
+            // Add your customizations after calling base.OnModelCreating(builder);
+
+            var decimalProps = builder.Model
+            .GetEntityTypes()
+            .SelectMany(t => t.GetProperties())
+            .Where(p => (System.Nullable.GetUnderlyingType(p.ClrType) ?? p.ClrType) == typeof(decimal));
+
+            foreach (var property in decimalProps)
+            {
+                property.SetPrecision(18);
+                property.SetScale(2);
+            }
+
+
+            builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
+        }
+        public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<PropertySurveyServiceUser>
+        {
+            public void Configure(EntityTypeBuilder<PropertySurveyServiceUser> builder)
+            {
+                builder.Property(u => u.FirstName).HasMaxLength(255);
+                builder.Property(u => u.LastName).HasMaxLength(255);
+            }
+        }
+
     }
 }

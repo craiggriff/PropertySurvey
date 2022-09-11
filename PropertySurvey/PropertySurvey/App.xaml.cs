@@ -716,8 +716,6 @@ namespace PropertySurvey
                 if (_data == null)
                 {
                     _data = new Functions(files.GetLocalFilePath("PropertySurveySQLite.db3"));
-                    //_data = new Functions(files.GetDownloadsFilePath("PropertySurveySQLite.db3"));
-                    //_data = new Functions(Path.Combine(Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, Android.OS.Environment.DirectoryDownloads), filename));// files.GetLocalFilePath("PropertySurveySQLite.db3"));
                 }
                 return _data;
             }
