@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class ConsTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public ConsTablesController(PropertySurveyServiceContext context)
+        public ConsTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

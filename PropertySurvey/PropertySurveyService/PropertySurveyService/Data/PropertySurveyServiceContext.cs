@@ -11,9 +11,9 @@ using PropertySurveyService.Models;
 
 namespace PropertySurveyService.Data
 {
-    public class PropertySurveyServiceContext : IdentityDbContext<PropertySurveyServiceUser>
+    public class AppDBContext : IdentityDbContext<AppUser>
     {
-        public PropertySurveyServiceContext(DbContextOptions<PropertySurveyServiceContext> options)
+        public AppDBContext(DbContextOptions<AppDBContext> options)
             : base(options)
         {
         }
@@ -22,7 +22,7 @@ namespace PropertySurveyService.Data
         public DbSet<PropertySurveyService.Models.Customer> Customer { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.Surveyor> Surveyor { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.Header> Header { get; set; } = default!;
-        public DbSet<PropertySurveyService.Models.AlumTable> AlumTable { get; set; } = default!;
+        public DbSet<PropertySurveyService.Models.AluminiumTable> AlumTable { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.BifoldTable> BifoldTable { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.CompositeTable> CompositeTable { get; set; } = default!;
         public DbSet<PropertySurveyService.Models.ConsTable> ConsTable { get; set; } = default!;
@@ -57,9 +57,9 @@ namespace PropertySurveyService.Data
 
             builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
         }
-        public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<PropertySurveyServiceUser>
+        public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<AppUser>
         {
-            public void Configure(EntityTypeBuilder<PropertySurveyServiceUser> builder)
+            public void Configure(EntityTypeBuilder<AppUser> builder)
             {
                 builder.Property(u => u.FirstName).HasMaxLength(255);
                 builder.Property(u => u.LastName).HasMaxLength(255);

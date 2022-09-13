@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class PanelTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public PanelTablesController(PropertySurveyServiceContext context)
+        public PanelTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

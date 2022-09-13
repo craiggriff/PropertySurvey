@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class GarageTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public GarageTablesController(PropertySurveyServiceContext context)
+        public GarageTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

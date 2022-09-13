@@ -14,14 +14,14 @@ namespace PropertySurveyService.Controllers
 {
     public class JobsController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
         public static string GetLocalIPAddress()
         {
             return "";
         }
 
-        public JobsController(PropertySurveyServiceContext context)
+        public JobsController(Data.AppDBContext context)
         {
             DbInitializer.Initialize(context);
             _context = context;

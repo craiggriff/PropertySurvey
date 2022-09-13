@@ -17,14 +17,14 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account.Manage
 {
     public class ExternalLoginsModel : PageModel
     {
-        private readonly UserManager<PropertySurveyServiceUser> _userManager;
-        private readonly SignInManager<PropertySurveyServiceUser> _signInManager;
-        private readonly IUserStore<PropertySurveyServiceUser> _userStore;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly IUserStore<AppUser> _userStore;
 
         public ExternalLoginsModel(
-            UserManager<PropertySurveyServiceUser> userManager,
-            SignInManager<PropertySurveyServiceUser> signInManager,
-            IUserStore<PropertySurveyServiceUser> userStore)
+            UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager,
+            IUserStore<AppUser> userStore)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -70,7 +70,7 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account.Manage
                 .ToList();
 
             string passwordHash = null;
-            if (_userStore is IUserPasswordStore<PropertySurveyServiceUser> userPasswordStore)
+            if (_userStore is IUserPasswordStore<AppUser> userPasswordStore)
             {
                 passwordHash = await userPasswordStore.GetPasswordHashAsync(user, HttpContext.RequestAborted);
             }

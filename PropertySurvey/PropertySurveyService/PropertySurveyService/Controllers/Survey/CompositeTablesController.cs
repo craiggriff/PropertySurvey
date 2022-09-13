@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class CompositeTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public CompositeTablesController(PropertySurveyServiceContext context)
+        public CompositeTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

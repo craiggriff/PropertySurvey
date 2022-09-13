@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class LockingTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public LockingTablesController(PropertySurveyServiceContext context)
+        public LockingTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

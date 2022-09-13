@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class UPVCTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public UPVCTablesController(PropertySurveyServiceContext context)
+        public UPVCTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

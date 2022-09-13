@@ -11,8 +11,8 @@ using PropertySurveyService.Data;
 
 namespace PropertySurveyService.Migrations
 {
-    [DbContext(typeof(PropertySurveyServiceContext))]
-    [Migration("20220911151313_InitialCreate")]
+    [DbContext(typeof(AppDBContext))]
+    [Migration("20220913185839_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,12 +104,10 @@ namespace PropertySurveyService.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -146,12 +144,10 @@ namespace PropertySurveyService.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -161,7 +157,7 @@ namespace PropertySurveyService.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("PropertySurveyService.Data.PropertySurveyServiceUser", b =>
+            modelBuilder.Entity("PropertySurveyService.Data.AppUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -211,6 +207,9 @@ namespace PropertySurveyService.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<byte[]>("ProfilePicture")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -220,6 +219,9 @@ namespace PropertySurveyService.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<int>("UsernameChangeLimit")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -234,7 +236,7 @@ namespace PropertySurveyService.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("PropertySurveyService.Models.AlumTable", b =>
+            modelBuilder.Entity("PropertySurveyService.Models.AluminiumTable", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -4493,7 +4495,7 @@ namespace PropertySurveyService.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("PropertySurveyService.Data.PropertySurveyServiceUser", null)
+                    b.HasOne("PropertySurveyService.Data.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -4502,7 +4504,7 @@ namespace PropertySurveyService.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("PropertySurveyService.Data.PropertySurveyServiceUser", null)
+                    b.HasOne("PropertySurveyService.Data.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -4517,7 +4519,7 @@ namespace PropertySurveyService.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PropertySurveyService.Data.PropertySurveyServiceUser", null)
+                    b.HasOne("PropertySurveyService.Data.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -4526,7 +4528,7 @@ namespace PropertySurveyService.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("PropertySurveyService.Data.PropertySurveyServiceUser", null)
+                    b.HasOne("PropertySurveyService.Data.AppUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

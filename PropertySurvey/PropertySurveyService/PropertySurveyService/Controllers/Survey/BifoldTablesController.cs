@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class BifoldTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public BifoldTablesController(PropertySurveyServiceContext context)
+        public BifoldTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

@@ -15,11 +15,11 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account.Manage
 {
     public class GenerateRecoveryCodesModel : PageModel
     {
-        private readonly UserManager<PropertySurveyServiceUser> _userManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<GenerateRecoveryCodesModel> _logger;
 
         public GenerateRecoveryCodesModel(
-            UserManager<PropertySurveyServiceUser> userManager,
+            UserManager<AppUser> userManager,
             ILogger<GenerateRecoveryCodesModel> logger)
         {
             _userManager = userManager;

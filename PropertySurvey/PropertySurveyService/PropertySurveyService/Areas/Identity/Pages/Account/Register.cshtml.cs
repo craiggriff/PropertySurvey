@@ -24,17 +24,17 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<PropertySurveyServiceUser> _signInManager;
-        private readonly UserManager<PropertySurveyServiceUser> _userManager;
-        private readonly IUserStore<PropertySurveyServiceUser> _userStore;
-        private readonly IUserEmailStore<PropertySurveyServiceUser> _emailStore;
+        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IUserStore<AppUser> _userStore;
+        private readonly IUserEmailStore<AppUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<PropertySurveyServiceUser> userManager,
-            IUserStore<PropertySurveyServiceUser> userStore,
-            SignInManager<PropertySurveyServiceUser> signInManager,
+            UserManager<AppUser> userManager,
+            IUserStore<AppUser> userStore,
+            SignInManager<AppUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -71,7 +71,6 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
-
             [Required]
             [StringLength(255, ErrorMessage = "The first name field should have a maximum of 255 characters")]
             [Display(Name = "Firstname")]
@@ -136,6 +135,8 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
+                    await _userManager.AddToRoleAsync(user, PropertySurveyService.Data.Roles.Basic.ToString());
+
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -168,27 +169,27 @@ namespace PropertySurveyService.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private PropertySurveyServiceUser CreateUser()
+        private AppUser CreateUser()
         {
             try
             {
-                return Activator.CreateInstance<PropertySurveyServiceUser>();
+                return Activator.CreateInstance<AppUser>();
             }
             catch
             {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(PropertySurveyServiceUser)}'. " +
-                    $"Ensure that '{nameof(PropertySurveyServiceUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                throw new InvalidOperationException($"Can't create an instance of '{nameof(AppUser)}'. " +
+                    $"Ensure that '{nameof(AppUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 
-        private IUserEmailStore<PropertySurveyServiceUser> GetEmailStore()
+        private IUserEmailStore<AppUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
-            return (IUserEmailStore<PropertySurveyServiceUser>)_userStore;
+            return (IUserEmailStore<AppUser>)_userStore;
         }
     }
 }

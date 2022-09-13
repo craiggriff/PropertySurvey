@@ -8,11 +8,13 @@ using Microsoft.AspNetCore.Identity;
 namespace PropertySurveyService.Data
 {
     // Add profile data for application users by adding properties to the PropertySurveyServiceUser class
-    public class PropertySurveyServiceUser : IdentityUser
+    public class AppUser : IdentityUser
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
 
+        public int UsernameChangeLimit { get; set; } = 10;
+        public byte[]? ProfilePicture { get; set; }
     }
 
 }

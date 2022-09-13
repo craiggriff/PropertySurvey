@@ -5,7 +5,7 @@ namespace PropertySurveyService.ViewModels
 {
     public class ItemIndexViewModel
     {
-        public AlumTable? Alum { get; set; }
+        public AluminiumTable? Alum { get; set; }
         public BifoldTable? Bifold { get; set; }
         public CompositeTable? Comp { get; set; }
         public ConsTable? Cons { get; set; }

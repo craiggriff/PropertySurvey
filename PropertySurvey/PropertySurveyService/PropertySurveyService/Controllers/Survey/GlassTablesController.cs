@@ -13,9 +13,9 @@ namespace PropertySurveyService.Controllers
 {
     public class GlassTablesController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public GlassTablesController(PropertySurveyServiceContext context)
+        public GlassTablesController(Data.AppDBContext context)
         {
             _context = context;
         }

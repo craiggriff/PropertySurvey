@@ -12,9 +12,9 @@ namespace PropertySurveyService.Controllers
 {
     public class CustomersController : Controller
     {
-        private readonly PropertySurveyServiceContext _context;
+        private readonly Data.AppDBContext _context;
 
-        public CustomersController(PropertySurveyServiceContext context)
+        public CustomersController(Data.AppDBContext context)
         {
             _context = context;
         }

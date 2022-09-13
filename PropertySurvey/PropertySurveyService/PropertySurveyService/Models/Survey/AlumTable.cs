@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PropertySurveyService.Models
 {
-    public class AlumTable
+    public class AluminiumTable
     {
         [Key]
         public int Id { get; set; }
