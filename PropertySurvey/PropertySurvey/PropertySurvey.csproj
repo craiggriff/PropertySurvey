@@ -11,8 +11,11 @@
 
   <ItemGroup>
     <Compile Remove="Martindales\**" />
+    <Compile Remove="ViewModels\**" />
     <EmbeddedResource Remove="Martindales\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
     <None Remove="Martindales\**" />
+    <None Remove="ViewModels\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1709,9 +1712,5 @@
     <EmbeddedResource Update="Views\Survey\WebViewView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>

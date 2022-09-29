@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Identity;
 using PropertySurveyService.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddDbContext<PropertySurveyService.Data.AppDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PropertySurveyServiceContext") ?? throw new InvalidOperationException("Connection string 'PropertySurveyServiceContext' not found.")));
 
@@ -26,6 +29,9 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
            .AddRoles<IdentityRole>()
            .AddEntityFrameworkStores<AppDBContext>();
 
+// swagger
+builder.Services.AddEndpointsApiExplorer();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -43,6 +49,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSwagger();
 
 app.MapPost("/GetSurveyJobs", (GetSurveysDTO gs, PropertySurveyService.Data.AppDBContext db) =>
 {
@@ -289,5 +297,7 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "An error occurred seeding the DB.");
     }
 }
+
+app.UseSwaggerUI();
 
 app.Run();
